@@ -166,6 +166,15 @@
 
 <script type="text/javascript">
 	BmapInit();
+	
+	$(function(){
+		$.post("/index.php/welcome/GetInitPoint/",{catid:1},function(e){
+
+			alert(e);
+		});
+	})
 </script>
+
+
 
 <?php $this->load->view("footer");?>
