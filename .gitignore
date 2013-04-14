@@ -3,3 +3,9 @@
 */logs/!index.html
 */cache/*
 */cache/!index.html
+*/.settings/*
+*/.project
+*/.build
+.svn
+*/.svn
+*/.svn/*
