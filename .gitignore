@@ -4,8 +4,7 @@
 */cache/*
 */cache/!index.html
 .settings/*
-.project
-.buildpath
+
 .svn
 */.svn
 */.svn/*
