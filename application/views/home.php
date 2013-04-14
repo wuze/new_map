@@ -164,13 +164,27 @@
 		</div>
 	</div>
 
+<div>
+	<input type="hidden" id="s_lat"/>
+	<input type="hidden" id="s_lng"/>
+</div>
 <script type="text/javascript">
 	BmapInit();
-	
+
+	var data="";
+	var lng=0,lat=0;
 	$(function(){
 		$.post("/index.php/welcome/GetInitPoint/",{catid:1},function(e){
-
-			alert(e);
+			data=eval(e);
+			if(data){
+				for(var i=0;i<data.length;i++){	
+					    var pt = new BMap.Point(data[i].lng,data[i].lat);
+						var mk = new BMap.Marker(pt);
+						addMarker(pt, 1);
+						all_mark.push(mk);
+				}
+				
+			}
 		});
 	})
 </script>
