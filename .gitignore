@@ -3,11 +3,11 @@
 */logs/!index.html
 */cache/*
 */cache/!index.html
-*/.settings/*
-*/.project
-*/.build
+.settings/*
+.project
+.buildpath
 .svn
 */.svn
 */.svn/*
-*/admin/admin/config/database.php
-*/application/config/database.php
+admin/admin/config/database.php
+application/config/database.php
