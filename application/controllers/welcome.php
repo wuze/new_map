@@ -18,7 +18,7 @@ class Welcome extends CI_Controller {
 	
 	public function GetInitPoint()
 	{
-		$this->db->select("id,lng,lat,addr_name");
+		$this->db->select("*");
 		$ret = $this->db->get('content',10,0);
 		$data = $ret->result_array();
 

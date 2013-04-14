@@ -170,7 +170,6 @@
 </div>
 <script type="text/javascript">
 	BmapInit();
-
 	var data="";
 	var lng=0,lat=0;
 	$(function(){
@@ -180,13 +179,11 @@
 				for(var i=0;i<data.length;i++){	
 					    var pt = new BMap.Point(data[i].lng,data[i].lat);
 						var mk = new BMap.Marker(pt);
-						addMarker(pt, 1);
-						all_mark.push(mk);
+						addMarker(pt, 1,data[i]);
 				}
-				
 			}
 		});
-	})
+	});
 </script>
 
 
