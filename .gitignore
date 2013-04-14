@@ -1,0 +1,13 @@
+*/config/development
+*/logs/log-*.php
+*/logs/!index.html
+*/cache/*
+*/cache/!index.html
+*/.settings/*
+*/.project
+*/.build
+.svn
+*/.svn
+*/.svn/*
+*/admin/admin/config/database.php
+*/application/config/database.php

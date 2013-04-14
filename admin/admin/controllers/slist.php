@@ -38,10 +38,7 @@ class slist extends MY_Controller {
 	}
 	
 	
-	public function update_index(){
-		
-
-		
+	public function update_index(){		
 		$news_id =  $this->uri->segment(3);
 		
 		$this->db->select("*");
