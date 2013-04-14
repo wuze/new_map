@@ -107,7 +107,7 @@ function getLngLat(marker,info){
 		*/
 		
 		
-		var sContent = 
+
 		//var sContent =markTemplate(info['addr_name'],info['telephone'],info['address'],info['zipcode'],info['web_url'],info['img_url']);
 		
 		//alert(sContent);
@@ -327,9 +327,20 @@ function onmouseout_MarkerStyle(pointid, thiss) { //鼠标移开后点样式恢�
 }
 
 
-
+/*
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+*/
 function markTp(addrname,tel,address,zipcode,weburl,imgurl)
 {
+	var str="<h4 style='margin:0 0 5px 0;padding:0.2em 0'>天安门</h4>" + 
+			"<img style='float:right;margin:4px' id='imgDemo' src='http://app.baidu.com/map/images/tiananmen.jpg' width='139' height='104' title='天安门'/>" + 
+			"<p style='margin:0;line-height:1.5;font-size:13px;text-indent:2em'>天安门坐落在中国北京市中心,故宫的南侧,与天安门广场隔长安街相望,是清朝皇城的大门...</p>" + 
+			"</div>";
+			
+			
+	return  str;
 }
 
 function markTemplate(addrname,tel,address,zipcode,weburl,imgurl)
