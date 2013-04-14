@@ -26,31 +26,19 @@
 				<span class="inputSpan">新分类名称:&nbsp;</span>
 				<input class="inputClass" type="text" name="cid"  />
 			</div>
-			<div>
-				
+			
+			<div style="margin:0 auto 5px;padding 5px;height:50px;">	
+				<input type="button" class="submitbtnClass" id="submit" value="提交修改"  />
 			</div>
-	
-
     </div>
 	<div class="iclear"></div>
 </div>
 
 <script type="text/javascript">
 <!--
-$(function(){
-	$('#isubmit').click(function(){
-		var title=$('input[name=title]').val();
-		if($('input[name=author]').val() && title && title.length<30){
-			$('form[name=form]').submit();
-		}else if(title.length>30){
-			alert("标题过长");
-			return;
-		}else{
-			alert("新闻作者以及文章标题为必填项");
-			return;
-		}
-	});
-})
+function submitform()
+{
+	}
 //-->
 </script>
 
