@@ -164,6 +164,28 @@
 		</div>
 	</div>
 
+
+
+	<div id="center">
+	    <div id="controller" class="hidden">
+	        <span class="jFlowControl">No 1</span>
+	        <span class="jFlowControl">No 2</span>
+	        <span class="jFlowControl">No 3</span>
+	    </div>
+	    
+	    <div id="prevNext">
+	        <img src="images/prev.png" alt="Previous Tab" class="jFlowPrev" />
+	        <img src="images/next.png" alt="Next Tab" class="jFlowNext" />
+	    </div>
+	    
+	    <div id="slides">
+	        <div><img src="upload/1.jpg" alt="photo" /><p>This is photo number one. Neato!</p></div>
+	        <div><img src="upload/2.jpg" alt="photo" /><p>This is photo number two. Neato!</p></div>
+	        <div><img src="upload/3.jpg" alt="photo" /><p>This is photo number three. Neato!</p></div>
+	    </div>
+	</div>
+
+
 <div>
 	<input type="hidden" id="s_lat"/>
 	<input type="hidden" id="s_lng"/>
@@ -182,7 +204,7 @@
 						addMarker(pt, 1,data[i]);
 				}
 			}
-		});
+		});		
 	});
 </script>
 

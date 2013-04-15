@@ -1,0 +1,50 @@
+
+	#center {
+		position: absolute;
+		left: 50%;
+		top:  50%;
+		display:none;
+	}
+	#slides {
+		position: absolute;
+		width: 820px;
+		height: 333px;
+		left: -430px;
+		top: -186px;
+		overflow: hidden;
+		background: #000;
+		border: 20px solid #000;
+	      display: none
+	}
+
+	
+.hidden
+{
+	display: none;
+}
+
+#prevNext
+{
+	margin-bottom: -2.5em;
+}
+
+#prevNext img
+{
+	position: relative;
+	z-index: 2;
+	cursor: pointer;
+}
+
+p
+{
+	margin: 0;
+	padding: 0 1em;
+	font-size: 1.5em;
+	position: relative;
+	top: -50px;
+	line-height: 50px;
+	height: 50px;
+	background: black;
+	opacity: .7;
+	filter:alpha(opacity=70);
+}

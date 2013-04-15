@@ -112,7 +112,7 @@ function getLngLat(marker,info){
 		
 		//alert(sContent);
 		
-		sContent = markTp(info['addr_name'],info['telephone'],info['address'],info['zipcode'],info['web_url'],info['img_url']);
+		sContent = markTp(info['addr_name'],info['telephone'],info['address'],info['zipcode'],info['web_url'],info['img_url'],info['id']);
 		var html = new BMap.InfoWindow(sContent);  // 创建信息窗口对象
 		this.openInfoWindow(html);
 		/*
@@ -343,7 +343,7 @@ function markTp1(addrname,tel,address,zipcode,weburl,imgurl)
 }
 
 
-function markTp(addrname,tel,address,zipcode,weburl,imgurl)
+function markTp(addrname,tel,address,zipcode,weburl,imgurl,id)
 {
 	var str ="<div id='divnav'>"+address+"</div>"+ 
 				"<div id='divmid'>"+ 
@@ -377,7 +377,7 @@ function markTp(addrname,tel,address,zipcode,weburl,imgurl)
 					"</div>"+ 
 				"</div>"+ 
 			 "<div id='divfooter'style='float:left;margin-left:2px;' >" +
-			 "<a href='#' style='font-size:large;font-weight:bolder;padding:5px;;'>详细信息</a></div>";
+			 "<a href='#' style='font-size:large;font-weight:bolder;padding:5px;' onclick='detailInfo("+id+")'>详细信息</a></div>";
 		return str;
 	}
 

@@ -29,6 +29,26 @@ class Welcome extends CI_Controller {
 		else
 			echo 0;
 	}
+	
+	
+	//获取该景点所有图片	
+	public function GetPhoto()
+	{
+		$oid = $_POST['cid'];
+		if( $oid )
+		{
+			$this->db->select("*");
+			$this->db->where("out_id",$oid);
+			$ret = $this->db->get('photo');
+			$data = $ret->result_array();
+		}
+		if( $data )
+		{
+			echo json_encode($data);
+		}
+		else
+			echo 0;
+	}
 
 }
 
