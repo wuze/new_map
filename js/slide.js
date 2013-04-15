@@ -32,3 +32,7 @@ function slidetpl(imgurl,describe,imgname)
 	var str="<img src='"+imgurl+"'>";
 	return str;
 }
+
+function closeShow(){
+	$('div#wrap').css("display","none");
+}
