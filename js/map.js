@@ -112,6 +112,7 @@ function getLngLat(marker,info){
 		
 		//alert(sContent);
 		
+		sContent = markTp(info['addr_name'],info['telephone'],info['address'],info['zipcode'],info['web_url'],info['img_url']);
 		var html = new BMap.InfoWindow(sContent);  // 创建信息窗口对象
 		this.openInfoWindow(html);
 		/*
@@ -332,16 +333,53 @@ function onmouseout_MarkerStyle(pointid, thiss) { //鼠标移开后点样式恢�
 -moz-border-radius: 10px;
 border-radius: 10px;
 */
-function markTp(addrname,tel,address,zipcode,weburl,imgurl)
+function markTp1(addrname,tel,address,zipcode,weburl,imgurl)
 {
 	var str="<h4 style='margin:0 0 5px 0;padding:0.2em 0'>天安门</h4>" + 
 			"<img style='float:right;margin:4px' id='imgDemo' src='http://app.baidu.com/map/images/tiananmen.jpg' width='139' height='104' title='天安门'/>" + 
 			"<p style='margin:0;line-height:1.5;font-size:13px;text-indent:2em'>天安门坐落在中国北京市中心,故宫的南侧,与天安门广场隔长安街相望,是清朝皇城的大门...</p>" + 
 			"</div>";
-			
-			
 	return  str;
 }
+
+
+function markTp(addrname,tel,address,zipcode,weburl,imgurl)
+{
+	var str ="<div id='divnav'>"+address+"</div>"+ 
+				"<div id='divmid'>"+ 
+					"<div id='divleft'>"+
+							"<div class='divfields'>" +
+								"<div class='divfield'>" +
+									"<div class='divfield_left'><label>电话:</label></div>"+
+									"<div class='divfield_right'>"+tel+"</div>"+
+								"</div>" +
+								
+								"<div class='divfield'>" +
+									"<div class='divfield_left'><label>地址:</label></div>"+
+									"<div class='divfield_right'>"+address+"</div>"+
+								"</div>" +
+								
+								"<div class='divfield'>" +
+									"<div class='divfield_left'><label>邮编:</label></div>"+
+									"<div class='divfield_right'>"+zipcode+"</div>"+
+								"</div>" +
+								
+								"<div class='divfield'>" +
+									"<div class='divfield_left'><label>网址:</label></div>"+
+									"<div class='divfield_right'>"+weburl+"</div>"+
+								"</div>" +
+								"</div>"+
+					"</div>"+ 
+					"<div id='divright'>"+ 
+							"<div class='divcontent'>" +
+							"<img src='"+imgurl+"' width='300' height='252'>"+
+							"</div>"+ 
+					"</div>"+ 
+				"</div>"+ 
+			 "<div id='divfooter'style='float:left;margin-left:2px;' >" +
+			 "<a href='#' style='font-size:large;font-weight:bolder;padding:5px;;'>详细信息</a></div>";
+		return str;
+	}
 
 function markTemplate(addrname,tel,address,zipcode,weburl,imgurl)
 {

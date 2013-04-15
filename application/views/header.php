@@ -5,6 +5,8 @@
 <script type="text/javascript"   src="http://api.map.baidu.com/api?v=1.3&ak=5decc14e7ef42946489c264113d9eed2"></script>
 <link rel="stylesheet" type="text/css" href="/css/style.css" />
 <link rel="stylesheet" type="text/css" href="/css/tab.css" />
+<link rel="stylesheet" type="text/css" href="/css/layer.css" />
+
 
 <script type="text/javascript"   src="/js/jquery1.6.2.min.js"></script>
 <script type="text/javascript"   src="/js/tab.js"></script>
