@@ -15,7 +15,13 @@ function detailInfo(id)
 			{
 				html_text += slidetpl(photos[i]['img_url'],photos[i]['describe'],photos[i]['img_name'],i);
 			}			
-			$('#center').css('display','block');
+			//
+			$('#wrap').css('display','block');
+			$("div#controller").jFlow({ 
+				slides: "#slides", 
+				width: "700px", 
+				height: "400px" 
+				}); 
 		}
 	});
 }

@@ -16,15 +16,7 @@
 <script type="text/javascript"   src="/js/jquery.flow.1.1.min.js"></script>
 <script type="text/javascript"   src="/js/slide.js"></script>
 
-<script type="text/javascript">
-$(function() { 
-	$("div#controller").jFlow({ 
-	slides: "#slides", 
-	width: "500px", 
-	height: "250px" 
-	}); 
-}); 
-</script>
+
 <title>福建文化地图在线服务平台</title>
 <link rel="shortcut icon" href="/images/favicon.ico">
 </head>

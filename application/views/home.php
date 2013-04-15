@@ -166,7 +166,7 @@
 
 
 
-	<div id="center">
+	<div id="wrap">
 	    <div id="controller" class="hidden">
 	        <span class="jFlowControl">No 1</span>
 	        <span class="jFlowControl">No 2</span>
@@ -179,9 +179,9 @@
 	    </div>
 	    
 	    <div id="slides">
-	        <div><img src="upload/1.jpg" alt="photo" /><p>This is photo number one. Neato!</p></div>
-	        <div><img src="upload/2.jpg" alt="photo" /><p>This is photo number two. Neato!</p></div>
-	        <div><img src="upload/3.jpg" alt="photo" /><p>This is photo number three. Neato!</p></div>
+	        <div><img src="upload/1.jpg" alt="photo" width="650px" height="380px"/><p>This is photo number one. Neato!</p></div>
+	        <div><img src="upload/2.jpg" alt="photo" width="650px" height="380px"/><p>This is photo number two. Neato!</p></div>
+	        <div><img src="upload/3.jpg" alt="photo" width="650px" height="380px"/><p>This is photo number three. Neato!</p></div>
 	    </div>
 	</div>
 
