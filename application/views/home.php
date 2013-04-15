@@ -179,9 +179,9 @@
 	    </div>
 	    
 	    <div id="slides">
-	        <div><img src="upload/1.jpg" alt="photo" width="650px" height="380px"/><p>This is photo number one. Neato!</p></div>
-	        <div><img src="upload/2.jpg" alt="photo" width="650px" height="380px"/><p>This is photo number two. Neato!</p></div>
-	        <div><img src="upload/3.jpg" alt="photo" width="650px" height="380px"/><p>This is photo number three. Neato!</p></div>
+	        <div><img src="upload/1.jpg" alt="photo" width="700px" height="380px"/><p>This is photo number one. Neato!</p></div>
+	        <div><img src="upload/2.jpg" alt="photo" width="700px" height="380px"/><p>This is photo number two. Neato!</p></div>
+	        <div><img src="upload/3.jpg" alt="photo" width="700px" height="380px"/><p>This is photo number three. Neato!</p></div>
 	    </div>
 	</div>
 
