@@ -25,7 +25,8 @@
 		<div id="content">	
 			<!-- 左边栏   -->
 			<div id="main">
-				<div class="current" id="map_canvas" style="border:1px solid #ddd;"></div>
+				<div class="current" id="map_canvas" style="margin-left:5px;border:1px solid #ddd;float:left;"></div>
+				<div id="panel"></div>
 			</div>
 			
 			<!--  右边栏    -->
