@@ -165,7 +165,6 @@
 	</div>
 
 
-
 	<div id="wrap">
 	    <div id="controller" class="hidden">
 	        <span class="jFlowControl">No 1</span>
@@ -176,7 +175,7 @@
 	    <div id="prevNext">
 	        <img src="images/prev.png" alt="Previous Tab" class="jFlowPrev" />
 	        <img src="images/next.png" alt="Next Tab" class="jFlowNext" />
-	        <img src="images/close.png" alt="Close Tab" class="jFlowNext"  style="margin-left:420px;" onclick="closeShow();"/>
+	        <img src="images/close.png" alt="Close Tab" class="jFlowNext"  style="margin-left:400px;" onclick="closeShow();"/>
 	    </div>
 	    
 	    <div id="slides">

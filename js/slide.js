@@ -15,7 +15,7 @@ function detailInfo(id)
 			{
 				html_text += slidetpl(photos[i]['img_url'],photos[i]['describe'],photos[i]['img_name'],i);
 			}			
-			//
+			$('#slides').html(html_text);
 			$('#wrap').css('display','block');
 			$("div#controller").jFlow({ 
 				slides: "#slides", 
@@ -29,7 +29,8 @@ function detailInfo(id)
 
 function slidetpl(imgurl,describe,imgname)
 {
-	var str="<img src='"+imgurl+"'>";
+	var str="<div><img src='"+imgurl+"' alt='"+imgname+"' width='700px' height='380px'/>"+
+			"<p>"+describe+"</p></div>";
 	return str;
 }
 
