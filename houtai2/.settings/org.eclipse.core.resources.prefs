@@ -1,0 +1,22 @@
+#Wed Apr 17 10:45:19 CST 2013
+eclipse.preferences.version=1
+encoding//application/controllers/admin_login/category.php=UTF-8
+encoding//application/controllers/admin_login/culture.php=UTF-8
+encoding//application/controllers/admin_login/news.php=UTF-8
+encoding//application/libraries/Captcha_code.php=gbk
+encoding//application/models/editor.php=gbk
+encoding//application/views/admin/category/add_indexing.php=gbk
+encoding//application/views/admin/category/add_traditional.php=gbk
+encoding//application/views/admin/category/edit_indexing.php=gbk
+encoding//application/views/admin/category/edit_traditional.php=gbk
+encoding//application/views/admin/category/indexing.php=gbk
+encoding//application/views/admin/category/traditional.php=gbk
+encoding//application/views/admin/culture/add_traditional.php=gbk
+encoding//application/views/admin/culture/edit_traditional.php=gbk
+encoding//application/views/admin/culture/traditional.php=gbk
+encoding//application/views/admin/index.php=gbk
+encoding//application/views/admin/menu/category.php=gbk
+encoding//application/views/admin/menu/culture.php=gbk
+encoding//application/views/admin/news/add_news.php=gbk
+encoding//application/views/admin/top.php=gbk
+encoding/<project>=UTF-8
