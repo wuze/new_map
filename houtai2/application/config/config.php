@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://new_map/houtai2';
+$config['base_url']	= 'http://www.map.tmc/houtai2';
 
 /*
 |--------------------------------------------------------------------------
