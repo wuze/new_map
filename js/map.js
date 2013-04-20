@@ -175,7 +175,9 @@ function searchArea()
 	var local = new BMap.LocalSearch(bmap, {
 	  renderOptions:{map: bmap, autoViewport:true}
 	});
-	local.searchNearby("小吃", "福州南站","1000");
+	
+	
+	local.searchNearby("小吃",area_name,"1000");
 }
 
 function searchPath()

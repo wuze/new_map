@@ -19,6 +19,7 @@
  *
  */
 	define('ENVIRONMENT', 'development');
+	//define('ENVIRONMENT', 'production');
 /*
  *---------------------------------------------------------------
  * ERROR REPORTING
@@ -33,7 +34,7 @@ if (defined('ENVIRONMENT'))
 	switch (ENVIRONMENT)
 	{
 		case 'development':
-			error_reporting(E_ALL ^ E_NOTICE);
+			error_reporting(E_ALL);
 		break;
 	
 		case 'testing':
@@ -56,8 +57,7 @@ if (defined('ENVIRONMENT'))
  * as this file.
  *
  */
-	$b_path = dirname(dirname(__FILE__));//修改当前的路径
-	$system_path = $b_path . '/system';
+	$system_path = 'system';
 
 /*
  *---------------------------------------------------------------
@@ -73,7 +73,7 @@ if (defined('ENVIRONMENT'))
  * NO TRAILING SLASH!
  *
  */
-	$application_folder = $b_path . '/admin/admin';
+	$application_folder = 'application';
 
 /*
  * --------------------------------------------------------------------
@@ -99,7 +99,7 @@ if (defined('ENVIRONMENT'))
 	// if your controller is not in a sub-folder within the "controllers" folder
 	// $routing['directory'] = '';
 
-	// The controller class file name.  Example:  Mycontroller
+	// The controller class file name.  Example:  Mycontroller.php
 	// $routing['controller'] = '';
 
 	// The controller function you wish to be called.
@@ -164,7 +164,6 @@ if (defined('ENVIRONMENT'))
 	define('SELF', pathinfo(__FILE__, PATHINFO_BASENAME));
 
 	// The PHP file extension
-	// this global constant is deprecated.
 	define('EXT', '.php');
 
 	// Path to the system folder
@@ -175,6 +174,7 @@ if (defined('ENVIRONMENT'))
 
 	// Name of the "system folder"
 	define('SYSDIR', trim(strrchr(trim(BASEPATH, '/'), '/'), '/'));
+
 
 	// The path to the "application" folder
 	if (is_dir($application_folder))
@@ -199,7 +199,7 @@ if (defined('ENVIRONMENT'))
  * And away we go...
  *
  */
-require_once BASEPATH.'core/CodeIgniter.php';
+require_once BASEPATH.'core/CodeIgniter'.EXT;
 
 /* End of file index.php */
 /* Location: ./index.php */

@@ -27,10 +27,15 @@ class Welcome extends CI_Controller {
 	
 	public function GetInitPoint()
 	{
+		$type = $_POST['type'];
+		
+		if( $type )
 		$this->db->select("*");
-		$ret = $this->db->get('content',10,0);
+		$ret = $this->db->get('content',2,0);
 		$data = $ret->result_array();
 
+
+		
 		if( $data )
 		{
 			echo json_encode($data);
@@ -51,6 +56,8 @@ class Welcome extends CI_Controller {
 			$ret = $this->db->get('photo');
 			$data = $ret->result_array();
 		}
+		
+		
 		if( $data )
 		{
 			echo json_encode($data);

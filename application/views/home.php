@@ -141,6 +141,14 @@
 					<a class="orange">文化信息索引类</a>
 				</div>
 				<div class="sponsors_down">
+					<ul style="margin-left:20px;padding:5px;">
+						<li><a>aaa</a></li>
+						<li><a>aaa</a></li>
+						<li><a>aaa</a></li>
+						<li><a>aaa</a></li>
+						<li><a>aaa</a></li>
+						<li><a>aaa</a></li>
+					</ul>
 				</div>
 				
 				<div class="sponsors" id="tradition">
@@ -191,22 +199,30 @@
 	<input type="hidden" id="s_lat"/>
 	<input type="hidden" id="s_lng"/>
 </div>
+
+
 <script type="text/javascript">
 	BmapInit();
 	var data="";
+	
 	var lng=0,lat=0;
-	$(function(){
-		$.post("/index.php/welcome/GetInitPoint/",{catid:1},function(e){
-			data=eval(e);
-			if(data){
-				for(var i=0;i<data.length;i++){	
-					    var pt = new BMap.Point(data[i].lng,data[i].lat);
-						var mk = new BMap.Marker(pt);
-						addMarker(pt, 1,data[i]);
+	GetPointer(0);
+	function GetPointer(type){
+		$(function(){
+			$.post("/index.php/welcome/GetInitPoint/",{type:1},function(e){
+				if(e){
+				data=eval(e);
+				if(data){
+					for(var i=0;i<data.length;i++){	
+						    var pt = new BMap.Point(data[i].lng,data[i].lat);
+							var mk = new BMap.Marker(pt);
+							addMarker(pt, 1,data[i]);
+					}
 				}
-			}
-		});		
-	});
+				}
+			});		
+		});
+	}
 </script>
 
 
