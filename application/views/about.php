@@ -16,7 +16,7 @@
 				<ul style="float:right;font-weight:bolder;margin-top:12px;margin-right:50px;cursor:pointer;">
 				<li><a>首页</a></li>
 				<li><a>|</a></li>
-				<li><a href="<?php echo site_url('/about/');?>" target="_blank">关于我们</a></li>
+				<li><a>关于我们</a></li>
 				<li><a>|</a></li>
 				<li><a href="">帮助</a></li>
 				</ul>
