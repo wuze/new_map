@@ -19,11 +19,7 @@
  *
  */
 	define('ENVIRONMENT', 'development');
-<<<<<<< HEAD:admin/index.php
-	//define('ENVIRONMENT', 'production');
-=======
-	define('ENVIRONMENT', 'production');
->>>>>>> 17d5574b86d2a841790dd9b744f9eef9479b3ca0:houtai2/index.php
+
 /*
  *---------------------------------------------------------------
  * ERROR REPORTING
