@@ -14,9 +14,9 @@
 			<div id="menu">
 				<ul style="float:left;font-weight:bolder;margin-top:12px;margin-left:20px;font-color:#000FFF;"><li ><?php echo "今天是".date("Y-m-d")."  ".$wk[$now]; ?></li></ul>
 				<ul style="float:right;font-weight:bolder;margin-top:12px;margin-right:50px;cursor:pointer;">
-				<li>关于我们</li>
-				<li>|</li>
-				<li>帮助</li>
+				<li><a href="" target="_blank">关于我们</a></li>
+				<li><a>|</a></li>
+				<li><a href="">帮助</a></li>
 				</ul>
 			</div>
 		</div>
@@ -141,7 +141,7 @@
 					<a class="orange">文化信息索引类</a>
 				</div>
 				<div class="sponsors_down">
-<<<<<<< HEAD
+
 					<ul style="margin-left:20px;padding:5px;">
 						<li><a>aaa</a></li>
 						<li><a>aaa</a></li>
@@ -149,10 +149,7 @@
 						<li><a>aaa</a></li>
 						<li><a>aaa</a></li>
 						<li><a>aaa</a></li>
-=======
-					<ul>
-						<li><a>aaaaa</a></li>
->>>>>>> 17d5574b86d2a841790dd9b744f9eef9479b3ca0
+
 					</ul>
 				</div>
 				

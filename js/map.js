@@ -199,79 +199,7 @@ function searchPath()
 		alert("请输入目的地点");
 		return;
 	}
-	
-	
-	/*
-	var transit = new BMap.TransitRoute(bmap, {
-			onSearchComplete: function(result) {
-				if (transit.getStatus() == BMAP_STATUS_SUCCESS) {
-					// 从结果对象中获取起点和终点信息
-					var start = result.getStart();
-					var end = result.getEnd();
-					addStart(start.point, start.title);
-					addEnd(end.point, end.title);
-					// 直接获取第一个方案
-					var plan = result.getPlan(0);
-					// 遍历所有步行线路
-					for (var i = 0; i < plan.getNumRoutes(); i++) {
-					if (plan.getRoute(i).getDistance(false) > 0) {
-					// 判断只有大于0的步行线路才会绘制
-					addWalkRoute(plan.getRoute(i).getPath());
-					}
-					}
-					// 遍历所有公交线路
-					var allLinePath = [];
-					for (i = 0; i < plan.getNumLines(); i++) {
-					allLinePath = allLinePath.concat(plan.getLine(i).getPath());
-					addLine(plan.getLine(i).getPath());
-					}
-					// 最后根据公交线路的点设置地图视野
-					bmap.setViewport(allLinePath);
-				}
-			}
-		});
 
-		transit.search(path_from, path_to);
-
-		// 添加起点覆盖物
-		function addStart(point, title){
-			bmap.addOverlay(new BMap.Marker(point, {
-			title: title,
-			icon: new BMap.Icon('/images/map/o_blue.png', new BMap.Size(38, 41), {
-			anchor: new BMap.Size(4, 36)
-			})}));
-		}
-
-		// 添加终点覆盖物
-		function addEnd(point, title){
-			bmap.addOverlay(new BMap.Marker(point, {
-			title: title,
-			icon: new BMap.Icon('/images/map/o_red.png', new BMap.Size(38, 41), {
-			anchor: new BMap.Size(4, 36)
-			})}));
-		}
-
-		// 添加路线
-		function addWalkRoute(path){
-			bmap.addOverlay(new BMap.Polyline(path, {
-			strokeColor: 'black',
-			strokeOpacity: 0.7,
-			strokeWeight: 4,
-			strokeStyle: 'dashed',
-			enableClicking: false
-			}));
-		}
-
-		function addLine(path){
-			bmap.addOverlay(new BMap.Polyline(path, {
-			strokeColor: 'blue',
-			strokeOpacity: 0.6,
-			strokeWeight: 5,
-			enableClicking: false
-			}));
-		}
-		*/
-	
 	
 	var transit = new BMap.TransitRoute("福建", {
 			renderOptions: {
@@ -283,29 +211,9 @@ function searchPath()
 }
 
 
-
-
-
-
-
-
 $('#panel').click(function(){
 	$(this).html('');
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //-------------------------------------------------------------------------------------------------------
 // 添加信息窗口
