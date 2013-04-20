@@ -141,6 +141,7 @@
 					<a class="orange">文化信息索引类</a>
 				</div>
 				<div class="sponsors_down">
+<<<<<<< HEAD
 					<ul style="margin-left:20px;padding:5px;">
 						<li><a>aaa</a></li>
 						<li><a>aaa</a></li>
@@ -148,6 +149,10 @@
 						<li><a>aaa</a></li>
 						<li><a>aaa</a></li>
 						<li><a>aaa</a></li>
+=======
+					<ul>
+						<li><a>aaaaa</a></li>
+>>>>>>> 17d5574b86d2a841790dd9b744f9eef9479b3ca0
 					</ul>
 				</div>
 				

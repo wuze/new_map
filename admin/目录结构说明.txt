@@ -1,3 +1,0 @@
-blue_upload_css 是多附件上传插件的css
-img  是多附件上传的 img
-cors 是多附件上传用到的
