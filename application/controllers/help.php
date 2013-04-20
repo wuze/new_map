@@ -1,17 +1,19 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Contact extends CI_Controller {
 
+class Help extends CI_Controller {
 	
-	public function __construct(){
+	function __construct(){
 		parent::__construct();
+		$this->load->helper("div");
 		$this->load->database();
-		$this->load->helper("url");
 	}
-
-	public function index(){
-		$data['page_title']="联系我们";
-		$this->load->view('contact',$data);
+	
+	
+	public function index()
+	{
+		$data['page_title']="帮助";
+		$this->load->view('help');
 	}
 }
 

@@ -24,19 +24,28 @@
 		</div>
 		
 	
-		<div id="content" >
+			<div id="content" >
 			<div style="background:url('/images/about_bk.jpg');height:600px;width:938px;margin-left:5px;margin-right:2px;padding:20px;">
 				
-				<h2>关于我们</h2>
+				<h2>联系我们</h2>
 				<hr />
-				<div>adfasdf</div>
+				<div style="width:300px;float:left;">
+				<table>
+					<tr><td>公司名称:</td><td>adsfasdfasdfasdf</td><td></td></tr>
+					<tr><td>公司aa:</td><td>adsfasdfasdfasdf</td><td></td></tr>
+					<tr><td>公司ss:</td><td>adsfasdfasdfasdf</td><td></td></tr>
+				</table>
+				</div>
+				<div style="float:left;">asdfadf</div>
 				
 			</div>	
 		</div>
-
-
-
 </div>
+
+
+
+
+
 
 
 
