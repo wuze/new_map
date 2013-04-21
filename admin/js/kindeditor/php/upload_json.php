@@ -31,7 +31,7 @@ $shijian=date("Y-m-d G:i:s");
 //文件保存目录路径
 $save_path = $url."/";
 //文件保存目录URL
-$save_url = 'http://192.168.1.105/5jstar.net/js/kindeditor/attached/'.substr($shijian,0,4)."/".substr($shijian,5,2)."/";
+$save_url = 'http://www.map.tmc/admin/js/kindeditor/attached/'.substr($shijian,0,4)."/".substr($shijian,5,2)."/";
 //定义允许上传的文件扩展名
 $ext_arr = array('gif', 'jpg', 'jpeg', 'png', 'bmp');
 //最大文件大小

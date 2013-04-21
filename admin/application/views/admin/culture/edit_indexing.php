@@ -41,7 +41,7 @@ function select_second_category(){
 <!--  内容列表   -->
 <?php echo form_open_multipart('admin_login/culture/form_culture');?>
 <input type="hidden" name="id" value="<?php echo $id;?>">
-<input type="hidden" name="cid" value="2">
+<input type="hidden" name="cid" value="1">
 <table width="98%" border="0" cellpadding="2" cellspacing="1" bgcolor="#D1DDAA" align="center" style="margin-top:8px" >
 <tr bgcolor="#E7E7E7">
 	<td height="24" colspan="2" background="skin/images/tbg.gif" bgcolor="#E7E7E7">&nbsp;编辑传统文化信息&nbsp;</td>

@@ -13,7 +13,7 @@
 -->
 <html lang="en">
 <head>
-<meta charset="gb2312">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
 <title>文化信息图片详情</title>
 <meta name="description" content="File Upload widget with multiple file selection, drag&amp;drop support, progress bar and preview images for jQuery. Supports cross-domain, chunked and resumable file uploads. Works with any server-side platform (Google App Engine, PHP, Python, Ruby on Rails, Java, etc.) that supports standard HTML form file uploads.">
 <meta name="viewport" content="width=device-width">

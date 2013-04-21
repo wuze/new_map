@@ -19,7 +19,7 @@
 var first_category = Array();
 first_category[0]="<option value='0'>二级分类</option>";
 <?php foreach($first_cate as $key){?>
-	  first_category['<?php echo $key->id?>']= "<option value='' selected>二级分类</option><?php foreach($key->sub_category as $sencond_cate){?><option value='<?php echo $sencond_cate->id;?>' <?php if($sencond_cate->id==$content['cat_id']){echo 'selected';}?> ><?php echo $sencond_cate->catname?></option><?php }?>";
+	  first_category['<?php echo $key->id?>']= "<option value='' selected>二级分类</option><?php foreach($key->sub_category as $sencond_cate){?><option value='<?php echo $sencond_cate->id;?>' ><?php echo $sencond_cate->catname?></option><?php }?>";
 <?php }?>
 function select_second_category(){
 	var first_selected = document.getElementById("first_cate"); 
@@ -41,23 +41,23 @@ function select_second_category(){
 <!--  内容列表   -->
 <?php echo form_open_multipart('admin_login/culture/form_culture');?>
 <input type="hidden" name="id" value="<?php echo $id;?>">
-<input type="hidden" name="cid" value="2">
+<input type="hidden" name="cid" value="1">
 <table width="98%" border="0" cellpadding="2" cellspacing="1" bgcolor="#D1DDAA" align="center" style="margin-top:8px" >
 <tr bgcolor="#E7E7E7">
-	<td height="24" colspan="2" background="skin/images/tbg.gif" bgcolor="#E7E7E7">&nbsp;编辑传统文化信息&nbsp;</td>
+	<td height="24" colspan="2" background="skin/images/tbg.gif" bgcolor="#E7E7E7">&nbsp;添加索引类文化信息&nbsp;</td>
 </tr>
 <tr align="center" bgcolor="#FAFAF1" height="22">
 	<td width="10%">名称</td>
-	<td width="90%" align="left"><input name="addr_name" type="text" id="title" size="50" value="<?php echo $content['addr_name'];?>"></td>
+	<td width="90%" align="left"><input name="addr_name" type="text" id="title" size="50" value=""></td>
 </tr>
 
 <tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='#FCFDEE';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22" >
   <td>分类</td>
   <td align="left">
-  <select  id="first_cate" onchange="select_second_category()">
+  <select id="first_cate" name="first_cate" onchange="select_second_category()">
   <option value="0">一级分类</option>
   <?php foreach($first_cate as $key){?>
-    <option value="<?php echo $key->id;?>" <?php if($key->id==$first_cate_selected)echo "selected";?>><?php echo $key->catname;?></option>
+    <option value="<?php echo $key->id;?>" <?php //if($key->id==$content['cat_id'])echo "selected";?>><?php echo $key->catname;?></option>
     <?php }?>
   </select>
   <select name="cat_id" id="sencond_cate">
@@ -67,29 +67,29 @@ function select_second_category(){
 </tr>
 <tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='#FCFDEE';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22" >
   <td>上传图片</td>
-  <td align="left"><input name="img_url" type="file" id="keywords" size="50"><?php if($content['img_url']){echo "<a href='".base_url()."../".$content['img_url']."' target='_blank'>".base_url()."../".$content['img_url']."</a>";}?></td>
+  <td align="left"><input name="img_url" type="file" id="keywords" size="50"></td>
 </tr>
 <tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='#FCFDEE';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22" >
   <td>电话</td>
-  <td align="left"><input type="text" name="telephone" id="textfield" value="<?php echo $content['telephone'];?>"></td>
+  <td align="left"><input type="text" name="telephone" id="textfield" value=""></td>
 </tr>
 <tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='#FCFDEE';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22" >
   <td>邮编</td>
-  <td align="left"><input type="text" name="zipcode" id="textfield" value="<?php echo $content['zipcode'];?>"></td>
+  <td align="left"><input type="text" name="zipcode" id="textfield" value=""></td>
 </tr>
 <tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='#FCFDEE';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22" >
   <td>网址</td>
-  <td align="left"><input type="text" name="web_url" id="textfield2" value="<?php echo $content['web_url']?>">&nbsp;&nbsp;以http://开头</td>
+  <td align="left"><input type="text" name="web_url" id="textfield2" value="">&nbsp;&nbsp;以http://开头</td>
 </tr>
 <tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='#FCFDEE';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22" >
-  <td>地址</td><td align="left"><input type="text" name="address" id="keyword" value="<?php echo $content['address'];?>"/><input type="button" value="获取坐标" id="search_button" ></td>
+  <td>地址</td><td align="left"><input type="text" name="address" id="keyword" value=""/><input type="button" value="获取坐标" id="search_button" ></td>
 </tr>
 <tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='#FCFDEE';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22" >
-  <td>经度坐标</td><td align="left"><input type="text" name="lng" id="lng" value="<?php echo $content['lng'];?>">
+  <td>经度坐标</td><td align="left"><input type="text" name="lng" id="lng" value="">
   </td>
 </tr>
 <tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='#FCFDEE';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22" >
-  <td>纬度坐标</td><td align="left"><input type="text" name="lat" id="lat" value="<?php echo $content['lat'];?>" >
+  <td>纬度坐标</td><td align="left"><input type="text" name="lat" id="lat" value="" >
   </td>
 </tr>
 
@@ -178,8 +178,6 @@ local.setMarkersSetCallback(function(pois){
 });
 
 window.onload = function(){
-	select_second_category();
-	
     //local.search(center);
     document.getElementById("search_button").onclick = function(){
     	document.getElementById("dituContent").style.display = "block";;

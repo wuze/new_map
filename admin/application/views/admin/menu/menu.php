@@ -20,9 +20,9 @@
         <dt onClick='showHide("items2_1")'><b>系统操作</b></dt>
         <dd style='display:block' class='sitem' id='items2_1'>
           <ul class='sitemu'>
-            <li><a href='<?php echo site_url('admin_login/main/sysconfig');?>' target='main'>系统设置</a></li>
+            <li><a href='<?php echo site_url('admin_login/main/aboutus');?>' target='main'>关于我们</a></li>
             <li><a href='<?php echo site_url('admin_login/main/password');?>' target='main'>修改密码</a></li>
-            <li><a href='<?php echo site_url('admin_login/main/lanmu');?>' target='main'>网站栏目</a></li>
+            <li><a href='<?php echo site_url('admin_login/main/friends');?>' target='main'>友情链接</a></li>
           </ul>
         </dd>
       </dl>

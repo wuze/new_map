@@ -1,7 +1,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-<title>传统分类列表</title>
+<title>索引分类列表</title>
 <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>skin/css/base.css">
 
 </head>
@@ -29,7 +29,7 @@
 	<td><?php echo $key->telephone;?></td>
 	<td><?php echo $key->web_url;?></td>
 	<td><?php echo $key->zipcode;?></td>
-	<td><?php echo anchor('admin_login/culture/edit_traditional/'.$key->id,"编辑");?> |<?php echo anchor('admin_login/culture/detail/'.$key->id,"详情");?>| <?php echo anchor('admin_login/culture/del_traditional/'.$key->id,"删除","onclick =  \"return confirm('删除将连详情的图片一并删除,确定删除吗?')\"");?></td>
+	<td><?php echo anchor('admin_login/culture/edit_indexing/'.$key->id,"编辑");?>  |<?php echo anchor('admin_login/culture/detail/'.$key->id,"详情");?>| <?php echo anchor('admin_login/culture/del_traditional/'.$key->id,"删除","onclick =  \"return confirm('删除将连详情的图片一并删除,确定删除吗?')\"");?></td>
 </tr>
 <?php }?>
 

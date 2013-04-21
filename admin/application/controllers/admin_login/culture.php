@@ -169,7 +169,7 @@ class Culture extends CI_Controller {
 	{	
 		$id = $this->uri->segment(4);
 		$table = 'map_category';
-		$where = "parentid = 0 and cat = 2";
+		$where = "parentid = 0 and cat = 1";
 		$query= $this->db->get_where($table,$where);
 		$first_cate = $query->result();
 		foreach ($first_cate as $key => $val){
@@ -207,14 +207,29 @@ class Culture extends CI_Controller {
 		$query= $this->db->get_where($table,$where);
 		$first_cate = $query->result();
 		
+		$table="content";
 		$id = $this->uri->segment(4);
 		$where = "id = $id";
 		$query = $this->db->get_where($table,$where);
-		$content =$query->row();
-		$data['content']=$content;
+		$content = current($query->result_array());
 		
+		$table="category";
+		foreach ($first_cate as $key => $val){
+			$where = "parentid = $val->id";
+			$query= $this->db->get_where($table,$where);
+			$val->sub_category = $query->result();
+			$first_cate[$key] = $val;
+		}
+		
+		$where = "id = {$content['cat_id']}";
+		$query= $this->db->get_where($table,$where);
+		$first_cate_selected= current($query->result_array());
+		$first_cate_selected_id = $first_cate_selected['parentid'];
+		$data['content']=$content;
+		$data['id'] = $id;
 		$data['first_cate']=$first_cate;
-		$this->load->view('admin/category/edit_indexing',$data);
+		$data['first_cate_selected'] = $first_cate_selected_id;
+		$this->load->view('admin/culture/edit_indexing',$data);
 	}
 	
 	function form_indexing()
