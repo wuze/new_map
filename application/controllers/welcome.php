@@ -50,7 +50,7 @@ class Welcome extends CI_Controller {
 	    
 	    
 	    $list3 =array();
-	    $link_sql = "select * from map_other WHERE oname='about_us' order by create_time desc ";
+	    $link_sql = "select * from map_other WHERE oname='friends' order by create_time desc ";
 	    $tr_c=$this->db->query( $link_sql );
 	    $list3 = $tr_c->result_array();
 	
