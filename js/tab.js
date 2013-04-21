@@ -48,8 +48,6 @@ function tabSwitch_2(active, number, tab_prefix, content_prefix) {
 }
 
 
-
-
 function showDivs()
 {
 	document.getElementById('light').style.display='block';
