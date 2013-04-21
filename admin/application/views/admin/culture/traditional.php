@@ -24,12 +24,12 @@
 <?php foreach($res as $key) {?>
 <tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='#FCFDEE';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22" >
 	<td><?php echo $key->addr_name;?></td>
-	<td><img src="<?php echo base_url().$key->img_url;?>" height="50px" width="70px"></td>
+	<td><img src="<?php echo '/'.$key->img_url;?>" height="50px" width="70px"></td>
 	<td><?php echo $key->address;?></td>
 	<td><?php echo $key->telephone;?></td>
 	<td><?php echo $key->web_url;?></td>
 	<td><?php echo $key->zipcode;?></td>
-	<td><?php echo anchor('admin_login/culture/edit_traditional/'.$key->id,"±à¼­");?> | <?php echo anchor('admin_login/culture/detail_traditional/'.$key->id,"ÏêÇé");?>  <?php echo anchor('admin_login/culture/del_traditional/'.$key->id,"É¾³ý","onclick =  \"return confirm('É¾³ý½«Á¬ÏêÇéµÄÍ¼Æ¬Ò»²¢É¾³ý,È·¶¨É¾³ýÂð?')\"");?></td>
+	<td><?php echo anchor('admin_login/culture/edit_traditional/'.$key->id,"±à¼­");?> | <?php echo anchor('admin_login/culture/detail_traditional/'.$key->id,"ÏêÇé");?> |<?php echo anchor('admin_login/culture/detail/'.$key->id,"ÏêÇé2");?>| <?php echo anchor('admin_login/culture/del_traditional/'.$key->id,"É¾³ý","onclick =  \"return confirm('É¾³ý½«Á¬ÏêÇéµÄÍ¼Æ¬Ò»²¢É¾³ý,È·¶¨É¾³ýÂð?')\"");?></td>
 </tr>
 <?php }?>
 

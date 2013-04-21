@@ -24,13 +24,14 @@ class Welcome extends CI_Controller {
 		$username=$this->input->post('UserName');
 		$userpass=$this->input->post('Password');
 		$yzm_session=$this->session->userdata('yzm');
-		
 		if($yzm==$yzm_session)
 		{
 			$where['username']=$username;
 			$where['password']=sha1($userpass);
+			
 			$table="user";
 			$query=$this->db->get_where($table,$where);
+			
 			$num=$query->num_rows();
 			if($num>0)
 			{

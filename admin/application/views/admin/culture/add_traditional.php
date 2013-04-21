@@ -15,6 +15,25 @@
     .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
 </style>
 <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+<script type="text/javascript">
+var first_category = Array();
+first_category[0]="<option value='0'>二级分类</option>";
+<?php foreach($first_cate as $key){?>
+	  first_category['<?php echo $key->id?>']= "<option value='' selected>二级分类</option><?php foreach($key->sub_category as $sencond_cate){?><option value='<?php echo $sencond_cate->id;?>' ><?php echo $sencond_cate->catname?></option><?php }?>";
+<?php }?>
+function select_second_category(){
+	var first_selected = document.getElementById("first_cate"); 
+	var first_cate_id = first_selected.options[first_selected.selectedIndex].value;
+	var sencond_cate = document.getElementById("sencond_cate"); 
+	if(first_cate_id!=''){
+		var city_options = first_category[first_cate_id];
+		sencond_cate.innerHTML = city_options;
+	}
+	else{
+		sencond_cate.innerHTML = "<option value=''>二级分类</option>";
+	}
+}
+</script>
 </head>
 <body leftmargin="8" topmargin="8" background='<?php echo base_url()?>skin/images/allbg.gif'>
 
@@ -25,7 +44,7 @@
 <input type="hidden" name="cid" value="2">
 <table width="98%" border="0" cellpadding="2" cellspacing="1" bgcolor="#D1DDAA" align="center" style="margin-top:8px" >
 <tr bgcolor="#E7E7E7">
-	<td height="24" colspan="2" background="skin/images/tbg.gif" bgcolor="#E7E7E7">&nbsp;编辑传统文化信息&nbsp;</td>
+	<td height="24" colspan="2" background="skin/images/tbg.gif" bgcolor="#E7E7E7">&nbsp;添加传统文化信息&nbsp;</td>
 </tr>
 <tr align="center" bgcolor="#FAFAF1" height="22">
 	<td width="10%">名称</td>
@@ -34,10 +53,15 @@
 
 <tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='#FCFDEE';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22" >
   <td>分类</td>
-  <td align="left"><select name="cat_id" id="select">
+  <td align="left">
+  <select id="first_cate" name="first_cate" onchange="select_second_category()">
+  <option value="0">一级分类</option>
   <?php foreach($first_cate as $key){?>
     <option value="<?php echo $key->id;?>" <?php //if($key->id==$content['cat_id'])echo "selected";?>><?php echo $key->catname;?></option>
     <?php }?>
+  </select>
+  <select name="cat_id" id="sencond_cate">
+  	<option value="">二级分类</option>
   </select>
   </td>
 </tr>
