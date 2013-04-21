@@ -23,7 +23,6 @@
 				</ul>
 			</div>
 		</div>
-		
 	
 		<div id="content">	
 			<!-- 左边栏   -->
@@ -139,12 +138,13 @@
 					</div>
 				</div>
 				
+				
+				
 				<!---   start  -->
 				<div class="sponsors" id="index">
 					<a class="orange">文化信息索引类</a>
 				</div>
 				<div class="sponsors_down">
-
 					<ul style="margin-left:20px;padding:5px;">
 						<li><a>aaa</a></li>
 						<li><a>aaa</a></li>
@@ -159,14 +159,10 @@
 				<div class="sponsors" id="tradition">
 					<a class="green">文化信息传统类</a>
 				</div>
+				<div class="sponsors_down">
+				</div>
 				
-				<div class="sponsors_down">
-				</div>
-				<div class="sponsors" id="wether">
-					<a class="red">天气情况</a>
-				</div>
-				<div class="sponsors_down">
-				</div>
+				
 				
 				<div class="sponsors" id="link">
 					<a class="blue">友情链接</a>
@@ -179,6 +175,8 @@
 	</div>
 
 
+
+	<!--  浮动款    -->
 	<div id="wrap">
 	    <div id="controller" class="hidden">
 	        <span class="jFlowControl">No 1</span>
