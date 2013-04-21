@@ -1,5 +1,6 @@
 <?php $this->load->view("header"); ?>
 
+
 <body>
 	<div id="site">
 		<div id="header">
@@ -34,26 +35,45 @@
 				<div class="bottom_menu">
 					<div id="navigate" >
 						<ul>
-							<li class="current_page_item"><a id="popup_box" onclick="showDivs();">搜索条件</a></li>
-							<li class="page_item page-item-675"><a>文化索引类信息</a></li>
-							<li class="page_item page-item-174"><a href="#" >文化传统类信息</a>
+							<li class="current_page_item"><a id="popup_box" href="#" onclick="showDivs();">搜索条件</a></li>
+							<li class="page_item page-item-675"><a href="#">文化索引类信息</a>
 								<ul class='children'>
-									<li class="page_item page-item-173"><a href="#" >Web design</a>
+								<?php  foreach($index as $k=>$row){ ?>
+									<li class="page_item page-item-173"><a><?php echo $k?></a>
 										<ul class='children'>
-											<li class="page_item page-item-172"><a href="#" >Wordpress</a></li>
-											<li class="page_item page-item-172"><a href="#" >Blogger</a></li>
-											<li class="page_item page-item-172"><a href="#" >Tumblr</a></li>
+											<?php foreach( $row as $kk=>$v){?>
+												<li class="page_item page-item-172"><a onclick="GetPointer(<?php echo $v['id']?>)" ><?php echo $v['catname']?></a></li>
+											<?php }?>
 										</ul>
 									</li>
-									<li class="page_item page-item-173"><a href="#" >Programming</a>
-										<ul class='children'>
-											<li class="page_item page-item-172"><a href="#" >PHP</a></li>
-											<li class="page_item page-item-172"><a href="#" >HTML</a></li>
-										</ul>
-									</li>
+								<?php }?>
 								</ul>
 							</li>
-							<li class="page_item page-item-146"><a href="#" >友情链接</a></li>
+							
+							
+							<li class="page_item page-item-174"><a href="#" >文化传统类信息</a>
+								<ul class='children'>
+								<?php  foreach($tradition as $k=>$row){ ?>
+									<li class="page_item page-item-173"><a><?php echo $k?></a>
+										<ul class='children'>
+											<?php foreach( $row as $kk=>$v){?>
+												<li class="page_item page-item-172"><a onclick="GetPointer(<?php echo $v['id']?>); " ><?php echo $v['catname']?></a></li>
+											<?php }?>
+										</ul>
+									</li>
+								<?php }?>
+								</ul>
+							</li>
+							
+							
+							<li class="page_item page-item-146"><a href="#" >友情链接</a>
+								<ul class='children'>
+								
+								<?php  if($link) { foreach($link as$k=>$row){ ?>
+									<li class="page_item page-item-173"><a target="_blank" href="<?php echo $row['ocontent'];?>"><?php echo $row['svar']?></a></li>
+								<?php } }?>
+								</ul>
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -79,9 +99,11 @@
 	    </div>
 	    
 	    <div id="slides">
+	    <!-- 
 	        <div><img src="upload/1.jpg" alt="photo" width="700px" height="380px"/><p>This is photo number one. Neato!</p></div>
 	        <div><img src="upload/2.jpg" alt="photo" width="700px" height="380px"/><p>This is photo number two. Neato!</p></div>
-	        <div><img src="upload/3.jpg" alt="photo"width="700px" height="380px"/><p>This is photo number three. Neato!</p></div>
+	        <div><img src="upload/3.jpg" alt="photo" width="700px" height="380px"/><p>This is photo number three. Neato!</p></div>
+	    -->
 	    </div>
 	</div>
 
@@ -203,18 +225,20 @@
 	
 	var lng=0,lat=0;
 	GetPointer(0);
+	
 	function GetPointer(type){
 		$(function(){
-			$.post("/index.php/welcome/GetInitPoint/",{type:1},function(e){
+			$.post("/index.php/welcome/GetInitPoint/",{type:type},function(e){
+				bmap.clearOverlays(); 
 				if(e){
-				data=eval(e);
-				if(data){
-					for(var i=0;i<data.length;i++){	
+					data=eval(e);
+					if(data){
+						for(var i=0;i<data.length;i++){	
 						    var pt = new BMap.Point(data[i].lng,data[i].lat);
 							var mk = new BMap.Marker(pt);
 							addMarker(pt, 1,data[i]);
+						}
 					}
-				}
 				}
 			});		
 		});

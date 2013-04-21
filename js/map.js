@@ -113,7 +113,6 @@ function getLngLat(marker,info){
 
 function searchPoint()
 {
-
 	bmap.clearOverlays();    //清除地图上所有覆盖物
 	var addr_name = $('#addr_name').val();
 	var addr_car  = $('#addr_cat').find('option:selected').text();
@@ -141,7 +140,6 @@ function searchPoint()
 
 function searchArea()
 {
-
 	var area_name = $('#area_name').val();
 	var area_car  = $('#area_cat').find('option:selected').text();
 	var area_dist = $('#area_dist').find('option:selected').text();
@@ -158,13 +156,11 @@ function searchArea()
 	  renderOptions:{map: bmap, autoViewport:true}
 	});
 	
-	
 	local.searchNearby("小吃",area_name,"1000");
 }
 
 function searchPath()
 {
-
 	bmap.clearOverlays();    //清除地图上所有覆盖物
 	var path_from = $('#path_from').val();
 	var path_to   = $('#path_to').val();
@@ -184,11 +180,11 @@ function searchPath()
 	closeDivs();
 
 	var transit = new BMap.TransitRoute("福建", {
-			renderOptions: {
-				map: bmap,
-				panel: 'panel'
-			}
-		});
+													renderOptions: {
+														map: bmap,
+														panel: 'panel'
+													}
+										});
 	transit.search(path_from, path_to);	
 }
 
@@ -242,7 +238,6 @@ function addInfoWindow(marker, poi, index) {
 			}
 		}
 	}
-	
 	
 	marker.addEventListener("click", openInfoWinFun);
 	marker.addEventListener("mouseout", function (e) {
@@ -335,75 +330,7 @@ function markTp(addrname,tel,address,zipcode,weburl,imgurl,id)
 			 "<div id='divfooter'style='float:left;margin-left:2px;' >" +
 			 "<a href='#' style='font-size:large;font-weight:bolder;padding:5px;' onclick='detailInfo("+id+")'>详细信息</a></div>";
 		return str;
-	}
-
-function markTemplate(addrname,tel,address,zipcode,weburl,imgurl)
-{
-	var str= "<div style='position: absolute; left: 437px; top: -160px;' class='gmnoprint'>"+
-	"<div style='position: relative; left: 0px; top: 0px; z-index: 10; width: 475px; height: 239px;' class='gmnoprint'>"+
-			"<img style='position: absolute; left: 451px; top: 11px; width: 12px; height: 12px; border: 0px; padding: 0px; margin: 0px; cursor: pointer; z-index: 10000;' src='http://maps.gstatic.com/intl/zh-CN_ALL/mapfiles/iw_close.gif'>"+
-			"<img style='position: absolute; left: 0px; top: 0px; width: 12px; height: 12px; border: 0px; padding: 0px; margin: 0px; cursor: pointer; z-index: 10000; display: none;' src='http://maps.gstatic.com/intl/zh-CN_ALL/mapfiles/iw_plus.gif'>"+
-				"<a style='position: absolute; left: 0px; top: 0px; text-decoration: none; white-space: nowrap; display: none;' href='javascript:void(0)'>"+
-			"<img style='position: relative; left: 0px; top: 0px; width: 15px; height: 12px; border: 0px; padding: 0px; margin: 0px; cursor: pointer; z-index: 10000; display: none; vertical-align: top;' src='http://maps.gstatic.com/intl/zh-CN_ALL/mapfiles/iw_fullscreen.gif'>"+
-			"<span style='font-size: small; text-decoration: underline; padding-left: 5px; overflow: hidden; position: relative; top: -1px;'>全屏显示</span></a>"+
-			"<img style='position: absolute; left: 0px; top: 0px; width: 12px; height: 12px; border: 0px; padding: 0px; margin: 0px; cursor: pointer; z-index: 10000; display: none;' src='http://maps.gstatic.com/intl/zh-CN_ALL/mapfiles/iw_minus.gif'>"+
-		
-		"<div style='position: absolute; left: 16px; top: 16px; width: 443px; height: 207px; z-index: 10;'><div>"+
-		"<table class='list_table' style='width:100%; height: 168px;'>"+
-		"<tbody>"+
-			"<tr>"+
-				"<td style='width: 250px; height: 168px;'>"+
-					"<img src='images/20000008a.jpg' style='size:30; width:250px; height: 164px;'>"+
-				"</td>"+
-				"<td>"+
-					"<table style='width: 100%; height: 168px'> "+
-						"<tbody>"+
-							"<tr>"+
-								"<td align='left' style='white-space:nowrap;'>名称:上海话剧艺术中心</td> "+
-							"</tr> "+
-							"<tr>"+ 
-								"<td style='white-space:nowrap;'>电话:54656200</td>"+
-							"</tr>"+
-							"<tr>"+ 
-								"<td style='height: 27px:white-space:nowrap;'> 地址:安福路288号</td> "+
-							"</tr>"+
-							"<tr>"+
-								"<td>邮编:200031</td>"+
-							"</tr>"+
-							"<tr>"+ 
-								"<td style='height: 27px'> "+
-									"<a href='http://www.china-drama.com/' target='_blank'>http://www.china-drama.com/</a>"+
-								"</td>"+
-							"</tr>"+ 
-							"<tr>"+
-								"<td style='height: 27px;'>"+
-									"<a href='javascript:showDetailDIV('landmark&'+'20000008'+'&上海话剧艺术中心')'> 详细信息</a>"+
-								"</td>"+
-							"</tr>"+
-						"</tbody>"+
-					"</table>"+
-				"</td>"+ 
-			"</tr> "+
-		"</tbody>"+
-		"</table>"+
-		"</div>"+
-		"</div>"+
-	"</div>"+
-	"<div style='width: 25px; height: 25px; overflow: hidden; z-index: 1; position: absolute; left: 0px; top: 0px;'>"+
-		"<img style='position: absolute; left: 0px; top: 0px; width: 690px; height: 786px; border: 0px; padding: 0px; margin: 0px;' src='http://maps.gstatic.com/intl/zh-CN_ALL/mapfiles/iw3.png'></div>"+
-		"<div style='width: 25px; height: 25px; overflow: hidden; z-index: 1; position: absolute; left: 450px; top: 0px;'>"+
-			"<img style='position: absolute; left: -665px; top: 0px; width: 690px; height: 786px; border: 0px; padding: 0px; margin: 0px;' src='http://maps.gstatic.com/intl/zh-CN_ALL/mapfiles/iw3.png'>"+
-		"</div>"+
-	
-	"<div style='width: 97px; height: 96px; overflow: hidden; z-index: 1; position: absolute; left: 189px; top: 214px;'>"+
-		"<img style='position: absolute; left: 0px; top: -691px; width: 690px; height: 786px; border: 0px; padding: 0px; margin: 0px;' src='http://maps.gstatic.com/intl/zh-CN_ALL/mapfiles/iw3.png'></div><div style='width: 25px; height: 25px; overflow: hidden; z-index: 1; position: absolute; left: 0px; top: 214px;'>"+
-		"<img style='position: absolute; left: 0px; top: -665px; width: 690px; height: 786px; border: 0px; padding: 0px; margin: 0px;' src='http://maps.gstatic.com/intl/zh-CN_ALL/mapfiles/iw3.png'></div><div style='width: 25px; height: 25px; overflow: hidden; z-index: 1; position: absolute; left: 450px; top: 214px;'>"+
-		"<img style='position: absolute; left: -665px; top: -665px; width: 690px; height: 786px; border: 0px; padding: 0px; margin: 0px;' src='http://maps.gstatic.com/intl/zh-CN_ALL/mapfiles/iw3.png'></div><div style='position: absolute; left: 25px; top: 0px; width: 425px; height: 25px; background-color: white; border-top-width: 1px; border-top-style: solid; border-top-color: rgb(171, 171, 171);'></div>"+
-	"<div style='position: absolute; left: 0px; top: 25px; width: 473px; height: 189px; background-color: white; border-left-width: 1px; border-left-style: solid; border-left-color: rgb(171, 171, 171); border-right-width: 1px; border-right-style: solid; border-right-color: rgb(171, 171, 171);'></div>"+
-	"<div style='position: absolute; left: 25px; top: 214px; width: 425px; height: 24px; background-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(171, 171, 171);'></div>"+
-"</div>";
-
-	return str;
 }
+
 
 
