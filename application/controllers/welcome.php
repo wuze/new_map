@@ -9,13 +9,9 @@ class Welcome extends CI_Controller {
 		$this->load->database();
 	}
 	
-	
 	public function index()
 	{
 		$data['page_title']="首页";
-
-		
-		
 		$this->load->view('home');
 	}
 	
