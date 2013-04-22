@@ -1,5 +1,7 @@
-<?php $this->load->view("header"); ?>
 
+<?php $this->load->view("header"); ?>
+<link rel="stylesheet" type="text/css" href="/css/slide.css" />
+<script type="text/javascript"   src="/js/slide.js"></script>
 
 <body>
 	<div id="site">

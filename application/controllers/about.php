@@ -13,7 +13,17 @@ class About extends CI_Controller {
 	public function index()
 	{
 		$data['page_title']="关于我们";
-		$this->load->view('about');
+		
+		$this->db->select("*");
+		$this->db->where('oname','about_us');
+		$ret=$this->db->get('other');
+		
+		$result = $ret->result_array();
+		
+	
+		$data['about'] = $result[0];
+		
+		$this->load->view('about',$data);
 	}
 }
 

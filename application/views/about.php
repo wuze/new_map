@@ -1,5 +1,4 @@
 <?php $this->load->view("header"); ?>
-
 <body>
 	<div id="site">
 		<div id="header">
@@ -29,7 +28,7 @@
 				
 				<h2>关于我们</h2>
 				<hr />
-				<div>adfasdf</div>
+				<?php echo $about['ocontent']; ?>
 				
 			</div>	
 		</div>
