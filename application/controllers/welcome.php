@@ -14,6 +14,7 @@ class Welcome extends CI_Controller {
 		$data['page_title']="首页";
 		$data = array();
 		
+		$list = array();
 		$tratidion_sql = " SELECT * FROM map_category WHERE parentid=0 AND cat=2";
 	    $tr_c = $this->db->query( $tratidion_sql );
 	    

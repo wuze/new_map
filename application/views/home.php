@@ -90,6 +90,8 @@
 	        <span class="jFlowControl">No 1</span>
 	        <span class="jFlowControl">No 2</span>
 	        <span class="jFlowControl">No 3</span>
+	        <span class="jFlowControl">No 4</span>
+	        <span class="jFlowControl">No 5</span>
 	    </div>
 	    
 	    <div id="prevNext">
