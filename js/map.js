@@ -32,6 +32,7 @@ function BmapInit() {
 	bmap.enableScrollWheelZoom();
 	
 	//自动搜索
+	/*
 	var ac_addr_name = new BMap.Autocomplete(    
     {"input" : "addr_name"
     ,"location" : city_name
@@ -52,6 +53,7 @@ function BmapInit() {
 		    {"input" : "path_to"
 		        ,"location" : city_name
 	});
+	*/
 		    	
 	//获得当前城市
 	function getCity(result){
@@ -90,33 +92,11 @@ function addMarker(point, index,info) {
 function getLngLat(marker,info){
 	marker.enableDragging(); //是否可以拖动
 	marker.addEventListener('dblclick',function(e){
-		/*
-		document.getElementById('s_lng').value = e.point.lng;
-		document.getElementById('s_lat').value = e.point.lat;
-		bmaplng = e.point.lng;
-		bmaplat = e.point.lat;
-		*/
-		/*
-		for(var i in info)
-			alert(i+"  "+info[i]);
-		*/
-		
-		
 
-		//var sContent =markTemplate(info['addr_name'],info['telephone'],info['address'],info['zipcode'],info['web_url'],info['img_url']);
-		
-		//alert(sContent);
-		
 		sContent = markTp(info['addr_name'],info['telephone'],info['address'],info['zipcode'],info['web_url'],info['img_url'],info['id']);
 		var html = new BMap.InfoWindow(sContent);  // 创建信息窗口对象
 		this.openInfoWindow(html);
-		/*
-		this.openInfoWindow(infoWindow);
-   //图片加载完毕重绘infowindow
-   document.getElementById('imgDemo').onload = function (){
-       infoWindow.redraw();
-   }*/
-		});
+	});
 	
 	/*
 	marker.addEventListener('mouseover',function(e){
@@ -142,7 +122,7 @@ function searchPoint()
 		alert("请输入名称");
 		return;
 	}
-	
+	closeDivs();
 
 	var search_txt = addr_name;
 	var bmyGeo = new BMap.Geocoder();
@@ -168,14 +148,15 @@ function searchArea()
 		alert("请输入地址");
 		return;
 	}
-	
+	closeDivs();
 	bmap.clearOverlays();    //清除地图上所有覆盖物
 	var search_txt = addr_name;
 	bmap.centerAndZoom("福州", 11);
 	var local = new BMap.LocalSearch(bmap, {
 	  renderOptions:{map: bmap, autoViewport:true}
 	});
-	local.searchNearby("小吃", "福州南站","1000");
+	
+	local.searchNearby("小吃",area_name,"1000");
 }
 
 function searchPath()
@@ -190,120 +171,27 @@ function searchPath()
 		return;
 	}
 	
-	
-	
 	if(!path_to)
 	{
 		alert("请输入目的地点");
 		return;
 	}
 	
-	
-	/*
-	var transit = new BMap.TransitRoute(bmap, {
-			onSearchComplete: function(result) {
-				if (transit.getStatus() == BMAP_STATUS_SUCCESS) {
-					// 从结果对象中获取起点和终点信息
-					var start = result.getStart();
-					var end = result.getEnd();
-					addStart(start.point, start.title);
-					addEnd(end.point, end.title);
-					// 直接获取第一个方案
-					var plan = result.getPlan(0);
-					// 遍历所有步行线路
-					for (var i = 0; i < plan.getNumRoutes(); i++) {
-					if (plan.getRoute(i).getDistance(false) > 0) {
-					// 判断只有大于0的步行线路才会绘制
-					addWalkRoute(plan.getRoute(i).getPath());
-					}
-					}
-					// 遍历所有公交线路
-					var allLinePath = [];
-					for (i = 0; i < plan.getNumLines(); i++) {
-					allLinePath = allLinePath.concat(plan.getLine(i).getPath());
-					addLine(plan.getLine(i).getPath());
-					}
-					// 最后根据公交线路的点设置地图视野
-					bmap.setViewport(allLinePath);
-				}
-			}
-		});
+	closeDivs();
 
-		transit.search(path_from, path_to);
-
-		// 添加起点覆盖物
-		function addStart(point, title){
-			bmap.addOverlay(new BMap.Marker(point, {
-			title: title,
-			icon: new BMap.Icon('/images/map/o_blue.png', new BMap.Size(38, 41), {
-			anchor: new BMap.Size(4, 36)
-			})}));
-		}
-
-		// 添加终点覆盖物
-		function addEnd(point, title){
-			bmap.addOverlay(new BMap.Marker(point, {
-			title: title,
-			icon: new BMap.Icon('/images/map/o_red.png', new BMap.Size(38, 41), {
-			anchor: new BMap.Size(4, 36)
-			})}));
-		}
-
-		// 添加路线
-		function addWalkRoute(path){
-			bmap.addOverlay(new BMap.Polyline(path, {
-			strokeColor: 'black',
-			strokeOpacity: 0.7,
-			strokeWeight: 4,
-			strokeStyle: 'dashed',
-			enableClicking: false
-			}));
-		}
-
-		function addLine(path){
-			bmap.addOverlay(new BMap.Polyline(path, {
-			strokeColor: 'blue',
-			strokeOpacity: 0.6,
-			strokeWeight: 5,
-			enableClicking: false
-			}));
-		}
-		*/
-	
-	
 	var transit = new BMap.TransitRoute("福建", {
-			renderOptions: {
-				map: bmap,
-				panel: 'panel'
-			}
-		});
+													renderOptions: {
+														map: bmap,
+														panel: 'panel'
+													}
+										});
 	transit.search(path_from, path_to);	
 }
-
-
-
-
-
-
 
 
 $('#panel').click(function(){
 	$(this).html('');
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //-------------------------------------------------------------------------------------------------------
 // 添加信息窗口
@@ -350,7 +238,6 @@ function addInfoWindow(marker, poi, index) {
 			}
 		}
 	}
-	
 	
 	marker.addEventListener("click", openInfoWinFun);
 	marker.addEventListener("mouseout", function (e) {
@@ -405,12 +292,6 @@ function onmouseout_MarkerStyle(pointid, thiss) { //鼠标移开后点样式恢�
 }
 
 
-/*
--webkit-border-radius: 10px;
--moz-border-radius: 10px;
-border-radius: 10px;
-*/
-
 
 
 function markTp(addrname,tel,address,zipcode,weburl,imgurl,id)
@@ -449,75 +330,7 @@ function markTp(addrname,tel,address,zipcode,weburl,imgurl,id)
 			 "<div id='divfooter'style='float:left;margin-left:2px;' >" +
 			 "<a href='#' style='font-size:large;font-weight:bolder;padding:5px;' onclick='detailInfo("+id+")'>详细信息</a></div>";
 		return str;
-	}
-
-function markTemplate(addrname,tel,address,zipcode,weburl,imgurl)
-{
-	var str= "<div style='position: absolute; left: 437px; top: -160px;' class='gmnoprint'>"+
-	"<div style='position: relative; left: 0px; top: 0px; z-index: 10; width: 475px; height: 239px;' class='gmnoprint'>"+
-			"<img style='position: absolute; left: 451px; top: 11px; width: 12px; height: 12px; border: 0px; padding: 0px; margin: 0px; cursor: pointer; z-index: 10000;' src='http://maps.gstatic.com/intl/zh-CN_ALL/mapfiles/iw_close.gif'>"+
-			"<img style='position: absolute; left: 0px; top: 0px; width: 12px; height: 12px; border: 0px; padding: 0px; margin: 0px; cursor: pointer; z-index: 10000; display: none;' src='http://maps.gstatic.com/intl/zh-CN_ALL/mapfiles/iw_plus.gif'>"+
-				"<a style='position: absolute; left: 0px; top: 0px; text-decoration: none; white-space: nowrap; display: none;' href='javascript:void(0)'>"+
-			"<img style='position: relative; left: 0px; top: 0px; width: 15px; height: 12px; border: 0px; padding: 0px; margin: 0px; cursor: pointer; z-index: 10000; display: none; vertical-align: top;' src='http://maps.gstatic.com/intl/zh-CN_ALL/mapfiles/iw_fullscreen.gif'>"+
-			"<span style='font-size: small; text-decoration: underline; padding-left: 5px; overflow: hidden; position: relative; top: -1px;'>全屏显示</span></a>"+
-			"<img style='position: absolute; left: 0px; top: 0px; width: 12px; height: 12px; border: 0px; padding: 0px; margin: 0px; cursor: pointer; z-index: 10000; display: none;' src='http://maps.gstatic.com/intl/zh-CN_ALL/mapfiles/iw_minus.gif'>"+
-		
-		"<div style='position: absolute; left: 16px; top: 16px; width: 443px; height: 207px; z-index: 10;'><div>"+
-		"<table class='list_table' style='width:100%; height: 168px;'>"+
-		"<tbody>"+
-			"<tr>"+
-				"<td style='width: 250px; height: 168px;'>"+
-					"<img src='images/20000008a.jpg' style='size:30; width:250px; height: 164px;'>"+
-				"</td>"+
-				"<td>"+
-					"<table style='width: 100%; height: 168px'> "+
-						"<tbody>"+
-							"<tr>"+
-								"<td align='left' style='white-space:nowrap;'>名称:上海话剧艺术中心</td> "+
-							"</tr> "+
-							"<tr>"+ 
-								"<td style='white-space:nowrap;'>电话:54656200</td>"+
-							"</tr>"+
-							"<tr>"+ 
-								"<td style='height: 27px:white-space:nowrap;'> 地址:安福路288号</td> "+
-							"</tr>"+
-							"<tr>"+
-								"<td>邮编:200031</td>"+
-							"</tr>"+
-							"<tr>"+ 
-								"<td style='height: 27px'> "+
-									"<a href='http://www.china-drama.com/' target='_blank'>http://www.china-drama.com/</a>"+
-								"</td>"+
-							"</tr>"+ 
-							"<tr>"+
-								"<td style='height: 27px;'>"+
-									"<a href='javascript:showDetailDIV('landmark&'+'20000008'+'&上海话剧艺术中心')'> 详细信息</a>"+
-								"</td>"+
-							"</tr>"+
-						"</tbody>"+
-					"</table>"+
-				"</td>"+ 
-			"</tr> "+
-		"</tbody>"+
-		"</table>"+
-		"</div>"+
-		"</div>"+
-	"</div>"+
-	"<div style='width: 25px; height: 25px; overflow: hidden; z-index: 1; position: absolute; left: 0px; top: 0px;'>"+
-		"<img style='position: absolute; left: 0px; top: 0px; width: 690px; height: 786px; border: 0px; padding: 0px; margin: 0px;' src='http://maps.gstatic.com/intl/zh-CN_ALL/mapfiles/iw3.png'></div>"+
-		"<div style='width: 25px; height: 25px; overflow: hidden; z-index: 1; position: absolute; left: 450px; top: 0px;'>"+
-			"<img style='position: absolute; left: -665px; top: 0px; width: 690px; height: 786px; border: 0px; padding: 0px; margin: 0px;' src='http://maps.gstatic.com/intl/zh-CN_ALL/mapfiles/iw3.png'>"+
-		"</div>"+
-	
-	"<div style='width: 97px; height: 96px; overflow: hidden; z-index: 1; position: absolute; left: 189px; top: 214px;'>"+
-		"<img style='position: absolute; left: 0px; top: -691px; width: 690px; height: 786px; border: 0px; padding: 0px; margin: 0px;' src='http://maps.gstatic.com/intl/zh-CN_ALL/mapfiles/iw3.png'></div><div style='width: 25px; height: 25px; overflow: hidden; z-index: 1; position: absolute; left: 0px; top: 214px;'>"+
-		"<img style='position: absolute; left: 0px; top: -665px; width: 690px; height: 786px; border: 0px; padding: 0px; margin: 0px;' src='http://maps.gstatic.com/intl/zh-CN_ALL/mapfiles/iw3.png'></div><div style='width: 25px; height: 25px; overflow: hidden; z-index: 1; position: absolute; left: 450px; top: 214px;'>"+
-		"<img style='position: absolute; left: -665px; top: -665px; width: 690px; height: 786px; border: 0px; padding: 0px; margin: 0px;' src='http://maps.gstatic.com/intl/zh-CN_ALL/mapfiles/iw3.png'></div><div style='position: absolute; left: 25px; top: 0px; width: 425px; height: 25px; background-color: white; border-top-width: 1px; border-top-style: solid; border-top-color: rgb(171, 171, 171);'></div>"+
-	"<div style='position: absolute; left: 0px; top: 25px; width: 473px; height: 189px; background-color: white; border-left-width: 1px; border-left-style: solid; border-left-color: rgb(171, 171, 171); border-right-width: 1px; border-right-style: solid; border-right-color: rgb(171, 171, 171);'></div>"+
-	"<div style='position: absolute; left: 25px; top: 214px; width: 425px; height: 24px; background-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(171, 171, 171);'></div>"+
-"</div>";
-
-	return str;
 }
+
 
 
