@@ -145,7 +145,18 @@
 					<a class="orange">文化信息索引类</a>
 				</div>
 				<div class="sponsors_down">
-					<ul style="margin-left:20px;padding:5px;">
+					<ul>
+						<?php if($index){ foreach( $index as $k=>$row){?>
+						<li><a><?php echo $k?></a>
+							<?php if( $row){?>
+							<ul style="">
+								<?php foreach( $row as $kk=>$v){?>
+								<li><a onclick="GetPointer(<?php echo $v['id']?>);"><?php echo $v['catname']?></a></li>
+								<?php }?>
+							</ul>	
+							<?php }?>
+						</li>
+						<?php  }} ?>
 						<li><a>aaa</a></li>
 						<li><a>aaa</a></li>
 						<li><a>aaa</a></li>
@@ -154,7 +165,6 @@
 						<li><a>aaa</a></li>
 					</ul>
 				</div>
-				
 				<div class="sponsors" id="tradition">
 					<a class="green">文化信息传统类</a>
 				</div>
@@ -165,6 +175,11 @@
 					<a class="blue">友情链接</a>
 				</div>
 				<div class="sponsors_down">
+					<ul style="">
+						<?php if($link){ foreach( $link as $k=>$v){?>
+						<li><a style="text-decoration:none;" target="_blank" href="<?php echo $v['ocontent']?>"><?php echo $v['svar']?></a></li>
+						<?php  }} ?>
+					</ul>
 				</div>
 				<!---   end -->
 			</div>
@@ -207,7 +222,7 @@
 	GetPointer(0);
 	function GetPointer(type){
 		$(function(){
-			$.post("/index.php/welcome/GetInitPoint/",{type:1},function(e){
+			$.post("/index.php/main/GetInitPoint/",{type:type},function(e){
 				if(e){
 				data=eval(e);
 				if(data){

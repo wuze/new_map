@@ -242,18 +242,30 @@ padding:0 0 18px 0;
 .sponsors_down
 {
 	display:none;
-	border:solid 4px #0000EE;
+	border:solid 3px #000;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 4px;
 	margin: 0 0  4px 5px;
 	float:left;
-	width:240px;
-	height:300px;
-	color:#6D7072;
+	width:235px;
+/*height:300px;*/
+	color:#000;
 	scrollbar-arrow-color:yellow;
 	scrollbar-base-color:lightsalmon;
 }
+
+.sponsors_down ul
+{
+	margin-left:22px;
+	padding:5px;
+}
+.sponsors_down li>ul
+{
+	cursor:pointer;
+}
+
+
 
 .sponsors a{
 	border:solid 2;

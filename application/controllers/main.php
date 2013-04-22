@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 
-class Welcome extends CI_Controller {
+class main extends CI_Controller {
 	
 	function __construct(){
 		parent::__construct();
@@ -37,8 +37,7 @@ class Welcome extends CI_Controller {
 	    	}
 	    }
 	    $data['tradition'] = $list;
-
-	    
+		*/	    
 	    $list2 = array();
 	    $index_sql = "select * from map_category WHERE parentid=0 AND cat=1 ";  // 索引类
 	    $tr_c=$this->db->query( $index_sql );
@@ -55,16 +54,12 @@ class Welcome extends CI_Controller {
 	    
 	    
 	    $data['index'] = $list2;
-	    
-	    
 	    $list3 =array();
 	    $link_sql = "select * from map_other WHERE oname='friends' order by create_time desc ";
 	    $tr_c=$this->db->query( $link_sql );
 	    $list3 = $tr_c->result_array();
 	
 	    $data['link'] =  $list3;
-		$this->load->view('home',$data);
-		*/
 		
 		$this->load->view("home",$data);
 	}
@@ -74,12 +69,12 @@ class Welcome extends CI_Controller {
 	public function GetInitPoint()
 	{
 		
+
 		if( $_POST['type'] )
 		{
 			$this->db->select("*");		
 			$this->db->where('cat_id',intval($_POST['type']));
 			$ret = $this->db->get('content');
-			
 			$data = $ret->result_array();
 		}
 		else{
@@ -122,5 +117,5 @@ class Welcome extends CI_Controller {
 
 }
 
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */
+/* End of file main.php */
+/* Location: ./application/controllers/main.php */
