@@ -12,6 +12,7 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		$data['page_title']="首页";
+		/*
 		$data = array();
 		
 		$list = array();
@@ -56,6 +57,9 @@ class Welcome extends CI_Controller {
 	
 	    $data['link'] =  $list3;
 		$this->load->view('home',$data);
+		*/
+		
+		$this->load->view("home");
 	}
 	
 	

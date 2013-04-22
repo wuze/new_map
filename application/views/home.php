@@ -143,7 +143,6 @@
 					<a class="orange">文化信息索引类</a>
 				</div>
 				<div class="sponsors_down">
-
 					<ul style="margin-left:20px;padding:5px;">
 						<li><a>aaa</a></li>
 						<li><a>aaa</a></li>
@@ -151,14 +150,12 @@
 						<li><a>aaa</a></li>
 						<li><a>aaa</a></li>
 						<li><a>aaa</a></li>
-
 					</ul>
 				</div>
 				
 				<div class="sponsors" id="tradition">
 					<a class="green">文化信息传统类</a>
 				</div>
-				
 				<div class="sponsors_down">
 				</div>
 				<div class="sponsors" id="wether">
