@@ -21,6 +21,9 @@ class About extends CI_Controller {
 		$result = $ret->result_array();
 		
 	
+		$json=file_get_contents("http://www.weather.com.cn/data/cityinfo/101230101.html");//福州的天气
+		$wether =  json_decode($json,true); 
+		$data['wether'] = $wether['weatherinfo'];
 		$data['about'] = $result[0];
 		
 		$this->load->view('about',$data);
