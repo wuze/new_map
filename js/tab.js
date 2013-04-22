@@ -10,17 +10,7 @@ $(document).ready(function(){
 	})
 });
 
-function ShowDiv(s)
-{
-    if(s>0)
-    {
-        document.getElementById('ceng').style.display='block';
-        document.getElementById('close').style.display='block';
-    }else{
-        document.getElementById('ceng').style.display='none';
-        document.getElementById('close').style.display='none';
-    }
-}
+
 
 function tabSwitch(new_tab, new_content) {
 	
@@ -48,13 +38,3 @@ function tabSwitch_2(active, number, tab_prefix, content_prefix) {
 }
 
 
-function showDivs()
-{
-	document.getElementById('light').style.display='block';
-	document.getElementById('fade').style.display='block'
-}
-function closeDivs()
-{
-	document.getElementById('light').style.display='none';
-	document.getElementById('fade').style.display='none';
-}
