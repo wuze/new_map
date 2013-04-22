@@ -7,7 +7,7 @@ function detailInfo(id)
 	var num = 0;
 	var html_text = "";
 	var cont_text = "";
-	$.post('/index.php/welcome/GetPhoto/',{cid:id},function(e){
+	$.post('/index.php/main/GetPhoto/',{cid:id},function(e){
 		photos=eval(e);
 		if( photos )
 		{
