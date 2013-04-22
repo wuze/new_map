@@ -12,6 +12,13 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		$data['page_title']="首页";
+		//http://www.weather.com.cn/data/cityinfo/101230101.html
+		$json=file_get_contents("http://www.weather.com.cn/data/cityinfo/101230101.html");//福州的天气
+		$wether =  json_decode($json,true); 
+		$data['wether'] = $wether['weatherinfo'];
+		
+		//print_r( $data['wether']);
+		
 		/*
 		$data = array();
 		
@@ -59,7 +66,7 @@ class Welcome extends CI_Controller {
 		$this->load->view('home',$data);
 		*/
 		
-		$this->load->view("home");
+		$this->load->view("home",$data);
 	}
 	
 	

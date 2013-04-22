@@ -11,7 +11,6 @@ $(document).ready(function(){
 });
 
 
-
 function tabSwitch(new_tab, new_content) {
 	
 	document.getElementById('content_1').style.display = 'none';
@@ -23,7 +22,6 @@ function tabSwitch(new_tab, new_content) {
     document.getElementById('tab_2').className = '';  
     document.getElementById('tab_3').className = '';          
 	document.getElementById(new_tab).className = 'active';		
-
 }
 
 

@@ -1,15 +1,16 @@
 $(document).ready(function(){
 	$('.sponsors').click(function(e){
 		
-			if( $(this).find(".sponsors_down").css('display') !='none' )
+			var display=$(this).next(".sponsors_down").css('display');
+			if( display=='undefined' ||display=='none' )
 			{
-				$(this).find(".sponsors_down").slideUp('slow');
-				$(this).find(".sponsors_down").css('display','none');
+				$(this).next(".sponsors_down").slideDown('slow');
+				$(this).next(".sponsors_down").css('display','block');
 			}
 			else
 			{
-				$(this).find(".sponsors_down").slideDown('slow');
-				$(this).find(".sponsors_down").css('display','block');
+				$(this).next(".sponsors_down").slideUp('slow');
+				$(this).next(".sponsors_down").css('display','none');
 			}
 	})
 
