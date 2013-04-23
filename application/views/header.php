@@ -6,7 +6,6 @@
 <link rel="stylesheet" type="text/css" href="/css/style.css" />
 <link rel="stylesheet" type="text/css" href="/css/tab.css" />
 <link rel="stylesheet" type="text/css" href="/css/layer.css" />
-<link rel="stylesheet" type="text/css" href="/css/slide.css" />
 
 <script type="text/javascript"   src="/js/jquery1.6.2.min.js"></script>
 <script type="text/javascript"   src="/js/tab.js"></script>
@@ -14,6 +13,7 @@
 <script type="text/javascript"   src="/js/list.js"></script>
 <script type="text/javascript"   src="/js/jquery-1.2.6.pack.js"></script>
 <script type="text/javascript"   src="/js/jquery.flow.1.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/slide.css" />
 <script type="text/javascript"   src="/js/slide.js"></script>
 
 
@@ -24,3 +24,4 @@
 <?php 
 	$this->load->helper('url');
 ?>
+

@@ -1,3 +1,4 @@
+
 <?php $this->load->view("header"); ?>
 
 
@@ -8,12 +9,14 @@
 				<img src="/images/logo.gif"   width="200" height="90" />
 			</a>	
 			<img src="/images/title.png"  width="200" height="90" />						
-			<?php $wk = array(1=>"星期一",2=>"星期二",3=>"星期三",4=>"星期四",5=>"星期五",6=>"星期六",0=>"星期天");
-				$now = date("w");
-			?>
+
 			<div style="position:absolute;top:60px;left:560px;height:30px;width:400px;">
 				福州:<img  src="http://www.weather.com.cn/m2/i/icon_weather/29x20/<?php echo $wether['img1']?>"/><?php echo $wether['weather']."   "?>温度:<?php echo $wether['temp1']."~".$wether['temp2']."  " .$wether['ptime']."发布数据"?>				
 			</div>
+			
+			<?php $wk = array(1=>"星期一",2=>"星期二",3=>"星期三",4=>"星期四",5=>"星期五",6=>"星期六",0=>"星期天");
+				$now = date("w");
+			?>
 			<div id="menu">
 				<ul style="float:left;font-weight:bolder;margin-top:12px;margin-left:20px;font-color:#000FFF;"><li ><?php echo "今天是".date("Y-m-d")."  ".$wk[$now]; ?></li></ul>
 				<ul style="float:right;font-weight:bolder;margin-top:12px;margin-right:50px;cursor:pointer;">
