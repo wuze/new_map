@@ -6,9 +6,7 @@
 
 </head>
 <body leftmargin="8" topmargin="8" background='<?php echo base_url()?>skin/images/allbg.gif'>
-<tr bgcolor="#E7E7E7">
 	<button onclick="window.location.href='<?php echo base_url();?>index.php/admin_login/main/add_friends'">ÃÌº””—«È¡¥Ω”</button>
-</tr>
 
 <table width="98%" border="0" cellpadding="2" cellspacing="1" bgcolor="#D1DDAA" align="center" style="margin-top:8px">
 <tr bgcolor="#E7E7E7">

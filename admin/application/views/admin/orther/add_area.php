@@ -1,7 +1,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-<title>友情链接</title>
+<title>地区管理</title>
 <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>skin/css/base.css">
 <style type="text/css">
 <!--
@@ -13,23 +13,29 @@
 
 <!--  快速转换位置按钮  -->
 <!--  内容列表   -->
-<?php echo form_open('admin_login/main/form_friends');?>
-<input type="hidden" name="check" value="<?php if(!empty($content)){echo $content['id'];}?>">
+<?php echo form_open('admin_login/main/form_area');?>
 <table width="98%" border="0" cellpadding="2" cellspacing="1" bgcolor="#D1DDAA" align="center" style="margin-top:8px" >
 <tr bgcolor="#E7E7E7">
-	<td height="24" colspan="2" background="skin/images/tbg.gif" bgcolor="#E7E7E7">&nbsp;添加友情链接&nbsp;</td>
+	<td height="24" colspan="2" background="skin/images/tbg.gif" bgcolor="#E7E7E7">&nbsp;添加地区&nbsp;</td>
 </tr>
 <tr align="center" bgcolor="#FAFAF1" height="22">
-	<td width="10%">网站名称</td>
-	<td width="90%" align="left"><input name="svar" type="text" id="title" size="50" ></td>
+	<td width="10%">所属城市</td>
+	<td width="90%" align="left">
+		<select name="parentid" id="select">
+		<option value='0'>无</option>
+		<?php foreach($first_cate as $key){?>
+	    <option value="<?php echo $key->id;?>" <?php if($key->id==$parentid){ ?>selected<?php }?>><?php echo $key->name;?></option>
+	    <?php }?>
+		</select>
+	</td>
 </tr>
-
 
 <tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='#FCFDEE';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22" >
-  <td>网址</td>
-  <td align="left"><input name="ocontent" type="text" id="title" size="50" value="http://"><font color='red'>网址以http://开头</font></td>
+  <td>地区</td>
+  <td align="left">
+  	<input type="text" name="name" id="textfield2" value="">
+  </td>
 </tr>
-
 
 <tr bgcolor="#FAFAF1">
 <td height="28" colspan="2">
