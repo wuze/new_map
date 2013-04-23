@@ -3,7 +3,7 @@
 <body>
 	<div id="site">
 		<div id="header">
-			<a href="#" class="logo">
+				<a href="#" class="logo">
 				<img src="/images/logo.gif"   width="200" height="90" />
 			</a>	
 			<img src="/images/title.png"  width="200" height="90" />						

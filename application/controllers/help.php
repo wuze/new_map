@@ -16,7 +16,7 @@ class Help extends CI_Controller {
 		$json=file_get_contents("http://www.weather.com.cn/data/cityinfo/101230101.html");//福州的天气
 		$wether =  json_decode($json,true); 
 		$data['wether'] = $wether['weatherinfo'];
-		$this->load->view('help');
+		$this->load->view('help',$data);
 	}
 }
 

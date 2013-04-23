@@ -2,11 +2,11 @@
 <body>
 	<div id="site">
 		<div id="header">
-			<a href="#" class="logo">
-				<img src="<?php echo base_url("/images/logo.gif"); ?>"   width="200" height="110" />
+					<a href="#" class="logo">
+				<img src="/images/logo.gif"   width="200" height="90" />
 			</a>	
-			<img src="<?php echo base_url("/images/title.png"); ?>"  width="300" height="110" />						
-			<?php $wk = array(1=>"星期一",2=>"星期二",3=>"星期三",4=>"星期四",5=>"星期五",6=>"星期六",0=>"星期天");
+			<img src="/images/title.png"  width="200" height="90" />						
+<?php $wk = array(1=>"星期一",2=>"星期二",3=>"星期三",4=>"星期四",5=>"星期五",6=>"星期六",0=>"星期天");
 				$now = date("w");
 			?>
 			
