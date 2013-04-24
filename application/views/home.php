@@ -62,7 +62,9 @@
 											<td><span class="labelClass" style="margin-top:10px;font-weight:bolder;" >所属类别:</span></td>
 											<td>
 												<select class="selectClass" style="width:154px;margin-top:10px;" name="addr_cat" id="addr_cat">
-														<option>A</option>
+														<?php if($cate){ foreach($cate as $k=>$v){?>
+															<option <?php echo $v['id']?>"><?php echo $v['catname'];?></option>
+														<?php }}?>
 												</select>
 											</td>
 										</tr>
@@ -71,7 +73,9 @@
 											<td><span class="labelClass" style="margin-top:10px;font-weight:bolder;" >所属区县:</span></td>
 											<td>
 												<select  class="selectClass" style="width:154px;margin-top:10px;" id="addr_prov" name="addr_prov">
-													<option>B</option>
+													<?php if($area){ foreach( $area as $k=>$v){?>
+													<option value="<?php echo $v['id']?>"><?php echo $v['name']?></option>
+													<?php }}?>
 												</select>
 											</td>
 										</tr>
@@ -96,7 +100,9 @@
 											<td><span class="labelClass" style="margin-top:10px;font-weight:bolder;" >所属类别:</span></td>
 											<td>
 												<select class="selectClass" style="width:154px;margin-top:10px;" name="area_cat" id="area_cat">
-														<option>A</option>
+														<?php if($cate){ foreach($cate as $k=>$v){?>
+															<option <?php echo $v['id']?>"><?php echo $v['catname'];?></option>
+														<?php }}?>
 												</select>
 											</td>
 										</tr>
@@ -105,7 +111,9 @@
 											<td><span class="labelClass" style="margin-top:10px;font-weight:bolder;">距&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;离:</span></td>
 											<td>
 												<select  class="selectClass" style="width:154px;margin-top:10px;" name="area_dist" id="area_dist">
-													<option>B</option>
+													<option value="500">500m</option>
+													<option value="1000">1000m</option>
+													<option value="1500">1500m</option>
 												</select>
 											</td>
 										</tr>

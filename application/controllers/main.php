@@ -30,10 +30,7 @@ class main extends CI_Controller {
 		$data['wether'] = $wether['weatherinfo'];
 		
 		//print_r( $data['wether']);
-		
-		/*
-		$data = array();
-		
+	
 		$list = array();
 		$tratidion_sql = " SELECT * FROM map_category WHERE parentid=0 AND cat=2";
 	    $tr_c = $this->db->query( $tratidion_sql );
@@ -49,7 +46,7 @@ class main extends CI_Controller {
 	    	}
 	    }
 	    $data['tradition'] = $list;
-		*/	    
+	    
 	    $list2 = array();
 	    $index_sql = "select * from map_category WHERE parentid=0 AND cat=1 ";  // 索引类
 	    $tr_c=$this->db->query( $index_sql );
@@ -63,16 +60,30 @@ class main extends CI_Controller {
 	    			$list2[$row['catname']] = $sub_ret->result_array();
 	    	}
 	    }
-	    
-	    
-	    $data['index'] = $list2;
-	    $list3 =array();
+		$data['index'] = $list2;
+
+		$area =array();
+	    $link_sql = "select id,name from map_area WHERE parentid=1";
+	    $tr_c=$this->db->query( $link_sql );
+	    $area = $tr_c->result_array();
+		$data['area']=$area;
+		
+		$list3 =array();
 	    $link_sql = "select * from map_other WHERE oname='friends' order by create_time desc ";
 	    $tr_c=$this->db->query( $link_sql );
 	    $list3 = $tr_c->result_array();
-	
 	    $data['link'] =  $list3;
-		
+
+	    
+	    $cate=array();
+	    $link_sql = "select id,catname from map_category where parentid>0";
+	    $tr_c=$this->db->query($link_sql);
+	    $cate=$tr_c->result_array();
+	    $data['cate']=$cate;
+	    
+	    
+	    $this->db->select("*");
+	    $this->db->from("area");
 		$this->load->view("home",$data);
 	}
 	

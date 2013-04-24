@@ -32,7 +32,6 @@ function BmapInit() {
 	bmap.enableScrollWheelZoom();
 	
 	//自动搜索
-	/*
 	var ac_addr_name = new BMap.Autocomplete(    
     {"input" : "addr_name"
     ,"location" : city_name
@@ -53,7 +52,6 @@ function BmapInit() {
 		    {"input" : "path_to"
 		        ,"location" : city_name
 	});
-	*/
 		    	
 	//获得当前城市
 	function getCity(result){
