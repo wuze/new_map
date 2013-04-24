@@ -147,6 +147,7 @@
                  if (inputs.filter('[required][value=""]').first().focus().length) {
                      return false;
                  }
+                inputs.filter('[name="title"]').val(encodeURI(inputs.filter('[name="title"]').val()));
                  data.formData = inputs.serializeArray();
             }, // .bind('fileuploadsubmit', func);
             // Callback for the start of each file upload request:

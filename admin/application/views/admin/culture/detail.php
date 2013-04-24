@@ -150,7 +150,7 @@
             <td class="preview">{% if (file.thumbnail_url) { %}
                 <a href="{%=file.url%}" title="{%=file.name%}" rel="gallery" download="{%=file.name%}"><img src="{%=file.thumbnail_url%}"></a>
             {% } %}</td>
-<td class="title"><label>Í¼Æ¬ÃèÊö:{%=file.title%} </label></td>
+<td class="title"><label>Í¼Æ¬ÃèÊö:{%=decodeURI(file.title)%} </label></td>
             <td colspan="2"></td>
         
         <td class="delete">

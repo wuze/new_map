@@ -10,7 +10,7 @@
 
 <table width="98%" border="0" cellpadding="2" cellspacing="1" bgcolor="#D1DDAA" align="center" style="margin-top:8px">
 <tr bgcolor="#E7E7E7">
-	<td height="24" colspan="7" background="skin/images/tbg.gif">&nbsp;传统文化信息&nbsp;</td>
+	<td height="24" colspan="7" background="skin/images/tbg.gif">&nbsp;索引文化信息&nbsp;</td>
 </tr>
 <tr align="center" bgcolor="#FAFAF1" height="22">
 	<td width="20%">名称</td>
@@ -29,7 +29,7 @@
 	<td><?php echo $key->telephone;?></td>
 	<td><?php echo $key->web_url;?></td>
 	<td><?php echo $key->zipcode;?></td>
-	<td><?php echo anchor('admin_login/culture/edit_indexing/'.$key->id,"编辑");?>  |<?php echo anchor('admin_login/culture/detail/'.$key->id,"详情");?>| <?php echo anchor('admin_login/culture/del_traditional/'.$key->id,"删除","onclick =  \"return confirm('删除将连详情的图片一并删除,确定删除吗?')\"");?></td>
+	<td><?php echo anchor('admin_login/culture/edit_indexing/'.$key->id,"编辑");?>  |<?php echo anchor('admin_login/culture/detail/'.$key->id,"详情");?>| <?php echo anchor('admin_login/culture/del_indexing/'.$key->id,"删除","onclick =  \"return confirm('删除将连详情的图片一并删除,确定删除吗?')\"");?></td>
 </tr>
 <?php }?>
 

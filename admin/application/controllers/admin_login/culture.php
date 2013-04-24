@@ -43,18 +43,37 @@ class Culture extends CI_Controller {
 		$this->load->view('admin/culture/add_traditional',$data);
 	}
 	function del_traditional($id){
-		//$id = $this->uri->segment(4);
 		$id = intval($id);
-		$table="category";
-		$where['id']=$id;
+		$table = 'photo';
+		$where = "out_id = $id";
+		$photos = $this->db->get_where($table,$where);
+		//echo $this->db->last_query();
+		
+		$photos_arr = $photos->result_array();
+		//var_dump($photos_arr);exit;
+		if(!empty($photos_arr)){
+			foreach($photos_arr as $key=>$photo){
+				$path = dirname($_SERVER['SCRIPT_FILENAME']). '/../upload/'.$photo['img_name'];
+				$thumbnails_path = dirname($_SERVER['SCRIPT_FILENAME']). '/../thumbnails/'.$photo['img_name'];
+				try{
+					unlink($path);
+					unlink($thumbnails_path);
+				}catch(Exception $e){
+					
+				}
+			}
+		}
+		$this->db->delete($table,$where);
+		$table="content";
+		$where = "id = $id";
 		$res=$this->db->delete($table,$where);
 		if($res)
 		{
-			$this->message->showmessage('delete success','admin_login/category/traditional');exit();
+			$this->message->showmessage('delete success','admin_login/culture/traditional');exit();
 		}
 		else
 		{
-			$this->message->showmessage('delete failed','admin_login/category/traditional');exit();
+			$this->message->showmessage('delete failed','admin_login/culture/traditional');exit();
 		}
 	}
 	function edit_traditional()
@@ -186,18 +205,37 @@ class Culture extends CI_Controller {
 		$this->load->view('admin/culture/add_indexing',$data);
 	}
 	function del_indexing($id){
-		//$id = $this->uri->segment(4);
-		$id = intval($id);
-		$table="category";
-		$where['id']=$id;
+	$id = intval($id);
+		$table = 'photo';
+		$where = "out_id = $id";
+		$photos = $this->db->get_where($table,$where);
+		//echo $this->db->last_query();
+		
+		$photos_arr = $photos->result_array();
+		//var_dump($photos_arr);exit;
+		if(!empty($photos_arr)){
+			foreach($photos_arr as $key=>$photo){
+				$path = dirname($_SERVER['SCRIPT_FILENAME']). '/../upload/'.$photo['img_name'];
+				$thumbnails_path = dirname($_SERVER['SCRIPT_FILENAME']). '/../thumbnails/'.$photo['img_name'];
+				try{
+					unlink($path);
+					unlink($thumbnails_path);
+				}catch(Exception $e){
+					
+				}
+			}
+		}
+		$this->db->delete($table,$where);
+		$table="content";
+		$where = "id = $id";
 		$res=$this->db->delete($table,$where);
 		if($res)
 		{
-			$this->message->showmessage('delete success','admin_login/category/indexing');exit();
+			$this->message->showmessage('delete success','admin_login/culture/indexing');exit();
 		}
 		else
 		{
-			$this->message->showmessage('delete failed','admin_login/category/indexing');exit();
+			$this->message->showmessage('delete failed','admin_login/culture/indexing');exit();
 		}
 	}
 	function edit_indexing()
@@ -269,6 +307,7 @@ class Culture extends CI_Controller {
 	
 	/********************************************************************************/
 		function detail($id){
+			header("Content-type:text/html;charset=gb2312");
 			$table="content";
 			$where = "id = $id";
 			$query= $this->db->get_where($table,$where);
@@ -294,12 +333,6 @@ class Culture extends CI_Controller {
        		 echo json_encode($success);
 		}
 		function blue_upload($content_id){
-			
-//			$table="content";
-//			$where = "id = $content_id";
-//			$query= $this->db->get_where($table,$where);
-//			$content = $query->result_array();
-			
 			$table="photo";
 			$where = "out_id  =  $content_id";
 			$query= $this->db->get_where($table,$where);
@@ -310,7 +343,7 @@ class Culture extends CI_Controller {
 			if($photo_array){
 				foreach($photo_array as $key=>$photo){
 					$files_name[] = $photo['img_name'];
-					$files_title[] = $photo['describe'];
+					$files_title[] =  urlencode(iconv("gb2312", "UTF-8", $photo['describe']));
 				}
 			}
 			
@@ -326,7 +359,7 @@ class Culture extends CI_Controller {
 			header('Access-Control-Allow-Origin: *');
 			header('Access-Control-Allow-Methods: OPTIONS, HEAD, GET, POST, PUT, DELETE');
 			header('Access-Control-Allow-Headers: X-File-Name, X-File-Type, X-File-Size');
-			
+			header("Content-type:text/html;charset=gb2312");
 			switch ($_SERVER['REQUEST_METHOD']) {
 				case 'OPTIONS':
 					break;
@@ -344,12 +377,13 @@ class Culture extends CI_Controller {
 								foreach($info as $key=>$val){
 									if($val->size){
 										$arr = array();
-										$arr['describe'] = $_POST['title'];
+										$describe = iconv('UTF-8','GB2312',urldecode($_POST['title']));
+										$arr['describe'] = $describe;
 										$arr['img_name'] = $val->name;
 										$arr['out_id'] = $content_id;
 										$arr['img_url'] = 'upoad/'.$val->name;
 									    $res=$this->db->insert($table,$arr);
-									    $info[$key]->title = $_POST['title'];
+									    $info[$key]->title = urldecode($_POST['title']);
 									}
 								}
 						}
