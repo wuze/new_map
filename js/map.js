@@ -85,7 +85,6 @@ function addMarker(point, index,info) {
 }
 
 
-
 //获得百度坐标
 function getLngLat(marker,info){
 	marker.enableDragging(); //是否可以拖动
@@ -96,7 +95,6 @@ function getLngLat(marker,info){
 		this.openInfoWindow(html);
 	});
 	
-	/*
 	marker.addEventListener('mouseover',function(e){
 		document.getElementById('s_lng').value = e.point.lng;
 		document.getElementById('s_lat').value = e.point.lat;
@@ -104,7 +102,6 @@ function getLngLat(marker,info){
 		bmaplat = e.point.lat;
 		marker.openInfoWindow(new BMap.InfoWindow("地名:"+info['addr_name']));
 	});
-	*/
 }
 
 
@@ -120,7 +117,7 @@ function searchPoint()
 		alert("请输入名称");
 		return;
 	}
-	closeDivs();
+
 
 	var search_txt = addr_name;
 	var bmyGeo = new BMap.Geocoder();
@@ -146,7 +143,7 @@ function searchArea()
 		alert("请输入地址");
 		return;
 	}
-	closeDivs();
+
 	bmap.clearOverlays();    //清除地图上所有覆盖物
 	var search_txt = addr_name;
 	bmap.centerAndZoom("福州", 11);
@@ -174,8 +171,7 @@ function searchPath()
 		alert("请输入目的地点");
 		return;
 	}
-	
-	closeDivs();
+
 
 	var transit = new BMap.TransitRoute("福建", {
 													renderOptions: {

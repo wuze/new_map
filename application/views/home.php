@@ -111,9 +111,10 @@
 											<td><span class="labelClass" style="margin-top:10px;font-weight:bolder;">距&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;离:</span></td>
 											<td>
 												<select  class="selectClass" style="width:154px;margin-top:10px;" name="area_dist" id="area_dist">
-													<option value="500">500m</option>
-													<option value="1000">1000m</option>
-													<option value="1500">1500m</option>
+													<option value="500">500米</option>
+													<option value="1000">1000米</option>
+													<option value="1500">1500米</option>
+													<option value="3000">3000米</option>
 												</select>
 											</td>
 										</tr>

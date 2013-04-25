@@ -3,16 +3,15 @@
 
 class main extends CI_Controller {
 	
-	
 	/*
-	
+	 * 
 	CREATE TABLE `map_area` (
-  `id` int(11) NOT NULL auto_increment,
-  `parentid` int(11) NOT NULL,
-  `name` varchar(20) NOT NULL,
-  `createtime` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
-  PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='地区表' AUTO_INCREMENT=5 ;
+  		`id` int(11) NOT NULL auto_increment,
+ 		 `parentid` int(11) NOT NULL,
+  		`name` varchar(20) NOT NULL,
+  		`createtime` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+  		PRIMARY KEY  (`id`)
+	) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='地区表' AUTO_INCREMENT=5 ;
 
 	*/
 	function __construct(){
@@ -24,7 +23,6 @@ class main extends CI_Controller {
 	public function index()
 	{
 		$data['page_title']="首页";
-		//http://www.weather.com.cn/data/cityinfo/101230101.html
 		$json=file_get_contents("http://www.weather.com.cn/data/cityinfo/101230101.html");//福州的天气
 		$wether =  json_decode($json,true); 
 		$data['wether'] = $wether['weatherinfo'];
@@ -91,7 +89,6 @@ class main extends CI_Controller {
 	
 	public function GetInitPoint()
 	{
-		
 
 		if( $_POST['type'] )
 		{
@@ -105,8 +102,6 @@ class main extends CI_Controller {
 			$ret = $this->db->get('content',20,0);
 			$data = $ret->result_array();
 		}
-		
-
 		
 		if( $data )
 		{

@@ -109,74 +109,71 @@ table.t3 tr.a1{
 		
 		
 		<div id="content" >
-			<div style="height:600px;width:938px;margin-left:5px;margin-right:2px;padding:20px;">
+			<div style="width:938px;margin-left:5px;margin-right:2px;padding:20px;">
 				
 				<h2>帮助</h2>
 				<hr />
 
-<table width="100%" id="mytab"  border="1" class="t1">
+				<table width="100%" id="mytab"  border="1" class="t1">
+				
+				  <tr class="a1">
+				    <td rowspan="4" style="width:100px;font-weight:bold;">地名查询:</td>
+				    <td rowspan="4" style="width:200px;"><img src="/images/diming.jpg" style="height: 150px;width:180px;"/></td>
+				    <td style="width:100px;font-weight:bold;">按“所属类别”查询</td>
+				    <td>在“所属类别”下拉框选择所要查询的文化信息类别（例如：文化馆），点击“查询”按钮，即可</td>
+				  </tr>
+				  <tr>
+				    <td style="width:100px;font-weight:bold;">按“所属区县”查询</td>
+				    <td>在“所属区县”下拉框选择所要查询的文化信息所属区县（例如：徐汇区），点击“查询”按钮，即可。</td>
+				  </tr>
+				  <tr class="a1">
+				    <td style="width:100px;font-weight:bold;">精确查询</td>
+				    <td>在“名称”栏输入文化类相关地名，点击“查询”按钮，即可。支持模糊查询。</td>
+				  </tr>
+				  <tr>
+				    <td style="width:100px;font-weight:bold;">逐步筛选查询</td>
+				    <td>在“名称”栏输入文化类相关地名，在“所属类别”下拉框选择所要查询的文化信息类别，“所属区县”下拉框选择文化信息所属区县，点击“查询”按钮，可实现对文化信息的精确检索定位。</td>
+				  </tr>
+				
+					<!--  周边  -->
+					  <tr class="a1">
+					    	<td style="width:100px;font-weight:bold;">周边查询:</td>
+					    	<td style="width:200px;"><img src="/images/zhoubian.jpg" style="height: 150px;width:180px;"/></td>
+					    	<td colspan="2" style="width:100px;font-weight:bold;">在“位置”栏输入任一地名，在“所属类别”下拉框选择所要查询的文化信息所属类别，并在“距离”下拉框选择所要查询的范围，点击“查询”按钮，即可。
+							（例如：查询距离人民广场3000米范围内的电影院有哪些？1.在“位置”栏输入“人民广场”；2.“所属类别”下拉框选择“电影院”；3.“距离”下拉框选择“3000米”；4.点击“查询”按钮。）</td>
+					  </tr>
+				  
+				  <!--   -->
+				    <tr class="a1">
+				    	<td style="width:100px;font-weight:bold;">线路查询:</td>
+				    	<td style="width:200px;"><img src="/images/xianlu.jpg" style="height: 150px;width:180px;"/></td>
+				    	<td colspan="2" style="width:100px;font-weight:bold;"> 	
+							“线路查询”窗口提供两种出行方式的查询：驾车、步行。分别在“此处出发”、“到达此处”栏输入起始地点及目的地，并在“出行方式”栏选择“驾车”或是“步行”，点击“查询”按钮，即可。同时，地图窗口及详细信息窗口将显示线路走向及线路详细信息。</td>
+				  	</tr>
+				</table>
+				
+				
+				<table width="100%" id="mytab2" style="margin-top:20px;display:none;"  border="1" class="t1">
+				
+				  <tr class="a1">
+				    <td  style="width:100px;font-weight:bold;">文化信息索引类:</td>
+				    <td  style="width:200px;"><img src="/images/diming.jpg" style="height: 150px;width:180px;"/></td>
+				    <td>asdfasdf</td>
+				    <td>在“所属类别”下拉框选择所要查询的文化信息类别（例如：文化馆），点击“查询”按钮，即可</td>
+				  </tr>
 
-  <tr class="a1">
-    <td>wallimn</td>
-    <td>http://blog.csdn.net/wallimn</td>
-    <td>wallimn@tom.com</td>
-    <td>http://wallimn.ys168.com</td>
-    <td>54871876</td>
-  </tr>
-  <tr>
-    <td>长三江</td>
-    <td>村在</td>
-    <td>北京天安门</td>
-    <td>东四十条</td>
-    <td>21345678</td>
-  </tr>
-  <tr class="a1">
-    <td>长三江</td>
-    <td>村在</td>
-    <td>北京天安门</td>
-    <td>东四十条</td>
-    <td>21345678</td>
-  </tr>
-  <tr>
-    <td>长三江</td>
-    <td>村在</td>
-    <td>北京天安门</td>
-    <td>东四十条</td>
-    <td>21345678</td>
-  </tr>
-  <tr class="a1">
-    <td>wallimn</td>
-    <td>http://blog.csdn.net/wallimn</td>
-    <td>wallimn@tom.com</td>
-    <td>http://wallimn.ys168.com</td>
-    <td>54871876</td>
-  </tr>
-  <tr>
-    <td>长三江</td>
-    <td>村在</td>
-    <td>北京天安门</td>
-    <td>东四十条</td>
-    <td>21345678</td>
-  </tr>
-  <tr class="a1">
-    <td>长三江</td>
-    <td>村在</td>
-    <td>北京天安门</td>
-    <td>东四十条</td>
-    <td>21345678</td>
-  </tr>
-  <tr>
-    <td>长三江</td>
-    <td>村在</td>
-    <td>北京天安门</td>
-    <td>东四十条</td>
-    <td>21345678</td>
-  </tr>
-</table>
 				
-				</div>
-				
-			</div>	
+								
+				  <tr class="a1">
+				    <td  style="width:100px;font-weight:bold;">文化信息传统类:</td>
+				    <td  style="width:200px;"><img src="/images/diming.jpg" style="height: 150px;width:180px;"/></td>
+				    <td>aasdfasdf</td>
+				    <td>在“所属类别”下拉框选择所要查询的文化信息类别（例如：文化馆），点击“查询”按钮，即可</td>
+				  </tr>
+
+				</table>
+</div>
+</div>	
 </div>
 
 
