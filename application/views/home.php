@@ -62,6 +62,8 @@
 											<td><span class="labelClass" style="margin-top:10px;font-weight:bolder;" >所属类别:</span></td>
 											<td>
 												<select class="selectClass" style="width:154px;margin-top:10px;" name="addr_cat" id="addr_cat">
+														
+														<option selected>请选择</option>
 														<?php if($cate){ foreach($cate as $k=>$v){?>
 															<option <?php echo $v['id']?>"><?php echo $v['catname'];?></option>
 														<?php }}?>
@@ -73,7 +75,8 @@
 											<td><span class="labelClass" style="margin-top:10px;font-weight:bolder;" >所属区县:</span></td>
 											<td>
 												<select  class="selectClass" style="width:154px;margin-top:10px;" id="addr_prov" name="addr_prov">
-													<?php if($area){ foreach( $area as $k=>$v){?>
+													<option selected>请选择</option>
+														<?php if($area){ foreach( $area as $k=>$v){?>
 													<option value="<?php echo $v['id']?>"><?php echo $v['name']?></option>
 													<?php }}?>
 												</select>
@@ -100,6 +103,7 @@
 											<td><span class="labelClass" style="margin-top:10px;font-weight:bolder;" >所属类别:</span></td>
 											<td>
 												<select class="selectClass" style="width:154px;margin-top:10px;" name="area_cat" id="area_cat">
+												
 														<?php if($cate){ foreach($cate as $k=>$v){?>
 															<option <?php echo $v['id']?>"><?php echo $v['catname'];?></option>
 														<?php }}?>

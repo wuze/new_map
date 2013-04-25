@@ -100,7 +100,10 @@ function getLngLat(marker,info){
 		document.getElementById('s_lat').value = e.point.lat;
 		bmaplng = e.point.lng;
 		bmaplat = e.point.lat;
-		marker.openInfoWindow(new BMap.InfoWindow("地名:"+info['addr_name']));
+		
+		if(!info['addr_name']&&info['addr_name']!='undefined'){
+			marker.openInfoWindow(new BMap.InfoWindow("地名:"+info['addr_name']));
+		}
 	});
 }
 
@@ -119,7 +122,14 @@ function searchPoint()
 	}
 
 
-	var search_txt = addr_name;
+	var search_txt="";
+	if( addr_car=='请选择' && addr_prov!='请选择' )
+		search_txt = addr_prov+"  "+addr_name;
+	else if( addr_car!='请选择' && addr_prov=='请选择' )
+		search_txt = addr_car+"  "+addr_name;
+	else
+		search_txt = addr_name;
+	
 	var bmyGeo = new BMap.Geocoder();
 	bmyGeo.getPoint(search_txt, function(point){
 		if (point) {
@@ -137,7 +147,9 @@ function searchArea()
 {
 	var area_name = $('#area_name').val();
 	var area_car  = $('#area_cat').find('option:selected').text();
-	var area_dist = $('#area_dist').find('option:selected').text();
+	var area_dist = $('#area_dist').find('option:selected').val();
+	
+
 	if(!area_name)
 	{
 		alert("请输入地址");
@@ -146,12 +158,13 @@ function searchArea()
 
 	bmap.clearOverlays();    //清除地图上所有覆盖物
 	var search_txt = addr_name;
+	
 	bmap.centerAndZoom("福州", 11);
 	var local = new BMap.LocalSearch(bmap, {
 	  renderOptions:{map: bmap, autoViewport:true}
 	});
 	
-	local.searchNearby("小吃",area_name,"1000");
+	local.searchNearby(area_car,area_name,area_dist);
 }
 
 function searchPath()
@@ -286,11 +299,11 @@ function onmouseout_MarkerStyle(pointid, thiss) { //鼠标移开后点样式恢�
 }
 
 
-
-
 function markTp(addrname,tel,address,zipcode,weburl,imgurl,id)
 {
-	var str ="<div id='divnav'>"+address+"</div>"+ 
+
+	var str="";
+	 str ="<div id='divnav'>"+address+"</div>"+ 
 				"<div id='divmid'>"+ 
 					"<div id='divleft'>"+
 							"<div class='divfields'>" +
@@ -323,7 +336,7 @@ function markTp(addrname,tel,address,zipcode,weburl,imgurl,id)
 				"</div>"+ 
 			 "<div id='divfooter'style='float:left;margin-left:2px;' >" +
 			 "<a href='#' style='font-size:large;font-weight:bolder;padding:5px;' onclick='detailInfo("+id+")'>详细信息</a></div>";
-		return str;
+	return str;
 }
 
 
