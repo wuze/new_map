@@ -88,11 +88,13 @@ function addMarker(point, index,info) {
 //获得百度坐标
 function getLngLat(marker,info){
 	marker.enableDragging(); //是否可以拖动
-	marker.addEventListener('dblclick',function(e){
 
-		sContent = markTp(info['addr_name'],info['telephone'],info['address'],info['zipcode'],info['web_url'],info['img_url'],info['id']);
-		var html = new BMap.InfoWindow(sContent);  // 创建信息窗口对象
-		this.openInfoWindow(html);
+	marker.addEventListener('dblclick',function(e){
+		if(info['addr_name']!='undefined'){
+			sContent = markTp(info['addr_name'],info['telephone'],info['address'],info['zipcode'],info['web_url'],info['img_url'],info['id']);
+			var html = new BMap.InfoWindow(sContent);  // 创建信息窗口对象
+			this.openInfoWindow(html);
+		}
 	});
 	
 	marker.addEventListener('mouseover',function(e){
@@ -100,10 +102,23 @@ function getLngLat(marker,info){
 		document.getElementById('s_lat').value = e.point.lat;
 		bmaplng = e.point.lng;
 		bmaplat = e.point.lat;
+		var gc = new BMap.Geocoder();  
+		
+	    var pt = e.point;
+	    var addComp;
+
 		
 		if(!info['addr_name']&&info['addr_name']!='undefined'){
 			marker.openInfoWindow(new BMap.InfoWindow("地名:"+info['addr_name']));
 		}
+		else
+		{
+		    gc.getLocation(pt, function(rs){
+		        addComp = rs.addressComponents;
+			    marker.openInfoWindow(new BMap.InfoWindow("地名:"+addComp.province+addComp.city+addComp.district  + addComp.street + addComp.streetNumber));
+		    });     
+		}
+		
 	});
 }
 
@@ -294,6 +309,7 @@ function openMarkerTipById1(pointid, thiss) {  //根据id打开搜索结果点ti
 	marker_on = pointid;
 }
 
+
 function onmouseout_MarkerStyle(pointid, thiss) { //鼠标移开后点样式恢复          
 	ifmarker = "";
 }
@@ -301,7 +317,6 @@ function onmouseout_MarkerStyle(pointid, thiss) { //鼠标移开后点样式恢�
 
 function markTp(addrname,tel,address,zipcode,weburl,imgurl,id)
 {
-
 	var str="";
 	 str ="<div id='divnav'>"+address+"</div>"+ 
 				"<div id='divmid'>"+ 
