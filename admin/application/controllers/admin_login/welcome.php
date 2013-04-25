@@ -56,6 +56,11 @@ class Welcome extends CI_Controller {
 		$this->session->unset_userdata('manager');
 		redirect('admin_login/');
 	}
+	function error(){
+		$this->load->model('editor');
+		$path = dirname($_SERVER['SCRIPT_FILENAME']).'/../';
+		$this->editor->erro($path);
+	}
 }
 
 /* End of file welcome.php */

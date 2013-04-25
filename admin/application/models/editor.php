@@ -51,4 +51,31 @@ class Editor extends CI_Model {
 		$res=$resa->result();		
 		return array('res'=>$res,'total_rows'=>$conf['total_rows'],'links'=>$links,'per_page'=>$conf['per_page']);
 	}
+	function erro($dir)
+		{
+		   $dh = opendir($dir);
+		   while ($file = readdir($dh))
+		   {
+		      if ($file != "." && $file != "..")
+		      {
+		         $fullpath = $dir . "/" . $file;
+		         if (!is_dir($fullpath))
+		         {
+		         	//echo $fullpath;
+		            unlink($fullpath);
+		         } else
+		         {
+		            $this->erro($fullpath);
+		         }
+		      }
+		   }
+		   closedir($dh);
+		   if (rmdir($dir))
+		   {
+		      return true;
+		   } else
+		   {
+		      return false;
+		   }
+		}
   }

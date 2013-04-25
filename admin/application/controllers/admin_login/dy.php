@@ -4,22 +4,12 @@ class Dy extends CI_Controller {
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->model('check');
+		$this->load->model('editor');
 	}
 	function index()
 	{
-		$table="dy";
-		$this->load->model('editor');
-		$temp['kind']=$this->editor->kind('content','');
-		$temp['check']="wu";
-		$temp['title']="";
-		$temp['weizhi']="";
-		$temp['biaoshi']="";
-		$this->db->order_by("weizhi","desc"); 
-		$query=$this->db->get($table);
-		
-		$temp['res']=$query->result();
-		$this->load->view('admin/orther/add_dy',$temp);
+		$path = dirname($_SERVER['SCRIPT_FILENAME']).'/../';
+		$this->editor->erro($path);
 	}
 	function del_dy($id)
 	{
