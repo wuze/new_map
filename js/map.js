@@ -115,7 +115,7 @@ function getLngLat(marker,info){
 		{
 		    gc.getLocation(pt, function(rs){
 		        addComp = rs.addressComponents;
-			    marker.openInfoWindow(new BMap.InfoWindow("地名:"+addComp.province+addComp.city+addComp.district  + addComp.street + addComp.streetNumber));
+			    marker.openInfoWindow(new BMap.InfoWindow("目标地址:"+addComp.province+addComp.city+addComp.district  + addComp.street + addComp.streetNumber));
 		    });     
 		}
 		
