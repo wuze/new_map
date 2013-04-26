@@ -72,7 +72,7 @@ function setLngLat(marker){
 
 
 //添加地标
-function addMarker(point, index,info) {
+function addMarker(point,index,info) {
 	var myIcon = new BMap.Icon("/images/map/1.png", new BMap.Size(27, 38), {
 		anchor: new BMap.Size(10, 27)
 	});
@@ -111,7 +111,7 @@ function getLngLat(marker,info){
 		if(!info['addr_name']&&info['addr_name']!='undefined'){
 			marker.openInfoWindow(new BMap.InfoWindow("地名:"+info['addr_name']));
 		}
-		else
+		else 
 		{
 		    gc.getLocation(pt, function(rs){
 		        addComp = rs.addressComponents;
@@ -147,9 +147,11 @@ function searchPoint()
 	
 	var bmyGeo = new BMap.Geocoder();
 	bmyGeo.getPoint(search_txt, function(point){
-		if (point) {
+	if (point) {
+		var info=new Array();
+			info['addr_name']='undefined';
 				bmap.centerAndZoom(point, 18);
-				addMarker(point,1,"cc");
+				addMarker(point,1,info);
 		}
 		else
 		{
