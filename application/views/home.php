@@ -240,14 +240,15 @@
 		$(function(){
 			$.post("/index.php/main/GetInitPoint/",{type:type},function(e){
 				if(e){
-				data=eval(e);
-				if(data){
-					for(var i=0;i<data.length;i++){	
+					data=eval(e);
+					if(data){
+						bmap.clearOverlays();    //清除地图上所有覆盖物
+						for(var i=0;i<data.length;i++){	
 						    var pt = new BMap.Point(data[i].lng,data[i].lat);
 							var mk = new BMap.Marker(pt);
 							addMarker(pt, 1,data[i]);
+						}
 					}
-				}
 				}
 			});		
 		});
