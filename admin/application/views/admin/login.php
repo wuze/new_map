@@ -58,7 +58,7 @@ function reloadCode() {
 <TABLE cellSpacing=0 cellPadding=0 align=center border=0>
   <TBODY>
   <TR>
-    <TD><IMG height=46 alt=网站管理系统 src="<?php echo base_url()?>images/login_r.gif" width=515 
+    <TD><IMG height=46 alt=网站管理系统 src="<?php echo base_url()?>images/login_r.png" width=515 
       border=0></TD></TR>
   <TR>
     <TD vAlign=top background=<?php echo base_url()?>images/login_l.gif height=211>

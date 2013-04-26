@@ -139,7 +139,7 @@ a:link,a:visited {
 <body bgColor='#ffffff'>
 <table width="100%" border="0" cellpadding="0" cellspacing="0" background="<?php echo base_url()?>skin/images/frame/topbg.gif">
   <tr>
-    <td width='20%' height="60"><img src="<?php echo base_url()?>skin/images/frame/logo.gif" /></td>
+    <td width='20%' height="60"><img src="<?php echo base_url()?>skin/images/frame/logo.jpg" /></td>
     <td width='80%' align="right" valign="bottom">
     	<table width="750" border="0" cellspacing="0" cellpadding="0">
       <tr>
