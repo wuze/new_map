@@ -1,24 +1,13 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-
 class main extends CI_Controller {
-	
-	/*
-	 * 
-	CREATE TABLE `map_area` (
-  		`id` int(11) NOT NULL auto_increment,
- 		 `parentid` int(11) NOT NULL,
-  		`name` varchar(20) NOT NULL,
-  		`createtime` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
-  		PRIMARY KEY  (`id`)
-	) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='地区表' AUTO_INCREMENT=5 ;
-
-	*/
 	function __construct(){
 		parent::__construct();
 		$this->load->helper("div");
 		$this->load->database();
 	}
+	
+
 	
 	public function index()
 	{

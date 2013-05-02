@@ -8,6 +8,7 @@ class Main extends CI_Controller {
 	}
 	function index()
 	{
+		
 		$this->load->view('admin/index');
 	}
 	function password()
@@ -15,6 +16,7 @@ class Main extends CI_Controller {
 		$temp['info']="";
 		$this->load->view('admin/orther/pass',$temp);
 	}
+	
 	function changpass()
 	{
 		$where['username']=$this->session->userdata('manager');
@@ -53,6 +55,8 @@ class Main extends CI_Controller {
 			}
 		}
 	}
+	
+	
 	function aboutus()
 	{
 		$table="other";
@@ -70,6 +74,8 @@ class Main extends CI_Controller {
 		$data['content'] = $content;
 		$this->load->view('admin/orther/about_us',$data);
 	}
+	
+	
 	function form_about_us(){
 		$arr['ocontent']=$this->input->post('content');
 		$arr['oname']='about_us';

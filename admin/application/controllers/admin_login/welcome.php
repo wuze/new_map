@@ -20,6 +20,7 @@ class Welcome extends CI_Controller {
 	}
 	function check_login()
 	{
+
 		$yzm=$this->input->post('CheckCode');
 		$username=$this->input->post('UserName');
 		$userpass=$this->input->post('Password');
